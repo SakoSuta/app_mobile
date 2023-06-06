@@ -1,28 +1,22 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
+    <ion-header>
       <ion-toolbar>
         <div class="navlog"><img src="Very_long_item.png" alt="Long Logo"></div>
       </ion-toolbar>
     </ion-header>
 
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <div class="navlog"><img src="Very_long_item.png" alt="Long Logo"></div>
-        </ion-toolbar>
-      </ion-header>
-
       <div class="Go_Back" onclick="history.back()">
         <img src="Go_Back.png" alt="Return button">
       </div>
       <div class="FormuLogin">
-        <form action="">
-          <h1 class="Gugi">Login</h1>
-          <input type="email" placeholder="Email" class="Gugi">
-          <input type="password" placeholder="Password" class="Gugi">
-          <router-link to="/register" class="gugi">Not registered yet?</router-link>
-          <button class="Gugi">Connect</button>
+        <form action="" class="formL">
+          <h1 class="Gugi titleL">Login</h1>
+          <input type="email" placeholder="Email" class="Gugi inputL">
+          <input type="password" placeholder="Password" class="Gugi inputL">
+          <router-link to="/register" class="gugi aL">Not registered yet?</router-link>
+          <button class="Gugi buttonL">Connect</button>
         </form>
       </div>
     </ion-content>
@@ -30,10 +24,14 @@
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage, IonToolbar } from '@ionic/vue';
 </script>
 
 <style>
+ion-toolbar{
+  --background: #24223E;
+  --color: #fff;
+}
 .Gugi{
   font-family: var(--font-gugi);
 }
@@ -53,26 +51,26 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
   height: 100%;
   background-color: #242131;
   padding: 10px 0px;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
-h1{
+.titleL{
   font-size: 28px !important;
 }
 
-form{
+.formL{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 70%;
-  height: 60%;
+  height: 40% !important;
 }
 
-input{
+.inputL{
   width: 100%;
-  height: 40px;
+  height: 40px !important;
   margin: 5px !important;
   padding-left: 20px;
   border-radius: 9px;
@@ -80,32 +78,33 @@ input{
   background-color: #2F2B45;
   color: #9987FF !important;
   font-size: 12px;
+  padding: 20px;
 }
 
-input::placeholder{
+.inputL::placeholder{
   color: #6459A2 !important;
   font-size: 12px;
 }
 
-input:focus{
+.inputL:focus{
   outline: none;
 }
 
-a{
+.aL{
   color: #9987FF !important;
   font-size: 14px;
-  margin: 5px !important;
+  margin: 2px !important;
 }
 
-button{
+.buttonL{
   width: 80%;
-  height: 34px;
   margin: 18px;
   border-radius: 9px !important;
   border: none !important;
   background-color: #9987FF;
   color: #fff !important;
   font-size: 12px;
+  padding: 10px;
 }
 
 .Go_Back{
