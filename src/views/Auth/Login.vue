@@ -21,6 +21,7 @@
           <h1 class="Gugi">Login</h1>
           <input type="email" placeholder="Email" class="Gugi">
           <input type="password" placeholder="Password" class="Gugi">
+          <router-link to="/register" class="gugi">Not registered yet?</router-link>
           <button class="Gugi">Connect</button>
         </form>
       </div>
@@ -72,7 +73,7 @@ form{
 input{
   width: 100%;
   height: 40px;
-  margin: 18px;
+  margin: 5px !important;
   padding-left: 20px;
   border-radius: 9px;
   border: none;
@@ -88,6 +89,12 @@ input::placeholder{
 
 input:focus{
   outline: none;
+}
+
+a{
+  color: #9987FF !important;
+  font-size: 14px;
+  margin: 5px !important;
 }
 
 button{
