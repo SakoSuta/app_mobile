@@ -67,7 +67,7 @@ form{
   justify-content: space-around;
   align-items: center;
   width: 70%;
-  height: 40%;
+  height: 60%;
 }
 
 input{
