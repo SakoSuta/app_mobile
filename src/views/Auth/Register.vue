@@ -17,7 +17,7 @@
           <input type="email" placeholder="Email" class="Gugi inputR">
           <input type="password" placeholder="Password" class="Gugi inputR">
           <router-link to="/login" class="gugi aR">You already have an account ?</router-link>
-          <button class="Gugi buttonR">Connect</button>
+          <button class="Gugi buttonR">Register</button>
         </form>
       </div>
     </ion-content>
