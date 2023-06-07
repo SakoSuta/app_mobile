@@ -39,7 +39,7 @@
         </ion-card>
         <ion-card class="CardCont">
           <ion-card-header>
-            <div class="ContIconCont"><ion-icon name="mail-outline" class="iconCont" color="primary"></ion-icon></div>
+            <div class="ContIconCont"><ion-icon name="call-outline" class="iconCont" color="primary"></ion-icon></div>
           </ion-card-header>
 
           <ion-card-content>
@@ -49,7 +49,7 @@
         </ion-card>
         <ion-card class="CardCont">
           <ion-card-header>
-            <div class="ContIconCont"><ion-icon name="mail-outline" class="iconCont" color="primary"></ion-icon></div>
+            <div class="ContIconCont"><ion-icon name="map-outline" class="iconCont"></ion-icon></div>
           </ion-card-header>
 
           <ion-card-content>
@@ -104,7 +104,6 @@ ion-content{
 .ContentCont{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 80%;
   height: 80%;
 }
@@ -133,6 +132,15 @@ ion-content{
   font-size: 12px;
   padding: 20px;
 }
+
+.inputCont::placeholder{
+  color: #6459A2 !important;
+  font-size: 12px;
+}
+
+.inputCont:focus{
+  outline: none;
+}
 .textaCont{
   width: 100%;
   min-width: 100%;
@@ -146,6 +154,14 @@ ion-content{
   color: #9987FF !important;
   font-size: 12px;
   padding: 20px;
+}
+.textaCont::placeholder{
+  color: #6459A2 !important;
+  font-size: 12px;
+}
+
+.textaCont:focus{
+  outline: none;
 }
 .buttonSend{
   width: 80%;
@@ -172,8 +188,8 @@ ion-content{
 .iconCont{
   width: 30px;
   height: 30px;
-  background-color: #9987FF;
-  color: #9987FF;
+  /* background-color: #9987FF; */
+  color: #9987FF !important;
 }
 .ContIconCont{
   background-color: #5E549E;
