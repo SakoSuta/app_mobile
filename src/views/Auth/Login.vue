@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <div class="navlog"><img src="Very_long_item.png" alt="Long Logo"></div>
+        <div class="navlog"><router-link to="/"><img src="Very_long_item.png" alt="Long Logo"></router-link></div>
       </ion-toolbar>
     </ion-header>
 
