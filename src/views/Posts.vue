@@ -12,7 +12,7 @@
       <div class="AllContPost">
         <h1 class="Gugi titlePost">Actuality</h1>
         <div class="AllCardPosts">
-          <router-link to="/home">
+          <router-link to="/post">
             <ion-card class="CardPost">
               <div class="ContCardPost">
                 <ion-card-header>
@@ -25,7 +25,7 @@
               </div>
             </ion-card>
           </router-link>
-          <router-link to="/home">
+          <router-link to="/post">
             <ion-card class="CardPost">
               <div class="ContCardPost">
                 <ion-card-header>
@@ -38,7 +38,7 @@
               </div>
             </ion-card>
           </router-link>
-          <router-link to="/home">
+          <router-link to="/post">
             <ion-card class="CardPost">
               <div class="ContCardPost">
                 <ion-card-header>
@@ -114,7 +114,7 @@ import { IonContent, IonPage, IonHeader, IonToolbar } from '@ionic/vue';
 }
 .CardPost ion-card-content p{
   text-align: left;
-  font-size: 10px;
+  font-size: 11px;
   margin: 2px 0px;
   color: #242252;
 }

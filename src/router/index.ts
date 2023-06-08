@@ -5,6 +5,7 @@ import RegisterPage from '../views/Auth/Register.vue';
 import LoginPage from '../views/Auth/Login.vue';
 import ContactPage from '../views/Contact.vue';
 import PostPage from '../views/Posts.vue';
+import PostBySlugPage from '../views/PostBySlug.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -35,6 +36,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/posts',
     name: 'Posts',
     component: PostPage
+  },
+  {
+    path: '/post',
+    name: 'PostBySlug',
+    component: PostBySlugPage
   },
 ]
 
