@@ -7,6 +7,7 @@ import ContactPage from '../views/Contact.vue';
 import PostPage from '../views/Posts.vue';
 import PostBySlugPage from '../views/PostBySlug.vue';
 import CategoryPage from '../views/Category.vue';
+import GamesPage from '../views/Games.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -47,6 +48,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/Category/:slug',
     name: 'Category',
     component: CategoryPage
+  },
+  {
+    path: '/Games/:slug',
+    name: 'Games',
+    component: GamesPage
   },
 ]
 
