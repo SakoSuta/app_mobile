@@ -10,47 +10,29 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <div class="AllContPost">
-        <h1 class="Gugi titlePost">FPS Game</h1>
-        <div class="AllCardPosts">
-          <router-link to="/post">
-            <ion-card class="CardPost">
-              <div class="ContCardPost">
-                <ion-card-header>
-                  <h2 class="Gugi">Titre hyper mega cool de tous les temps et de tous les univers interstellaire</h2>
-                </ion-card-header>
-                <ion-card-content>
-                  <p class="Gugi">Publish at 20/07/2023</p>
-                  <p class="Gugi">By Emilie Montpre</p>
-                </ion-card-content>
+      <div class="AllContCate">
+        <h1 class="Gugi titleCate">FPS Game</h1>
+        <div class="AllGameCate">
+          <router-link to="/Game">
+            <div class="Game">
+              <div class="ContGame">
+                <h2>FPS gamqzdqdddddddddddddddddddddddz</h2>
               </div>
-            </ion-card>
+            </div>
           </router-link>
-          <router-link to="/post">
-            <ion-card class="CardPost">
-              <div class="ContCardPost">
-                <ion-card-header>
-                  <h2 class="Gugi">Titre hyper mega cool de tous les temps et de tous les univers interstellaire</h2>
-                </ion-card-header>
-                <ion-card-content>
-                  <p class="Gugi">Publish at 20/07/2023</p>
-                  <p class="Gugi">By Emilie Montpre</p>
-                </ion-card-content>
+          <router-link to="/Game">
+            <div class="Game">
+              <div class="ContGame">
+                <h2>FPS game AHH</h2>
               </div>
-            </ion-card>
+            </div>
           </router-link>
-          <router-link to="/post">
-            <ion-card class="CardPost">
-              <div class="ContCardPost">
-                <ion-card-header>
-                  <h2 class="Gugi">Titre hyper mega cool de tous les temps et de tous les univers interstellaire</h2>
-                </ion-card-header>
-                <ion-card-content>
-                  <p class="Gugi">Publish at 20/07/2023</p>
-                  <p class="Gugi">By Emilie Montpre</p>
-                </ion-card-content>
+          <router-link to="/Game">
+            <div class="Game">
+              <div class="ContGame">
+                <h2>FPS game AHH</h2>
               </div>
-            </ion-card>
+            </div>
           </router-link>
         </div>
       </div>
@@ -74,49 +56,53 @@ import { IonContent, IonPage, IonHeader, IonToolbar } from '@ionic/vue';
   background-color: #24223E;
   padding: 0px 26px;
 }
-.AllContPost{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.AllContCate{
+  padding: 0px 26px;
 }
-.titlePost{
+
+.AllGameCate{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 568px) {
+  .AllGameCate{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .AllGameCate{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.titleCate{
   font-size: 28px;
   color: #FFFFFF;
   margin: 30px 0px;
 }
-.AllCardPosts{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-}
-.CardPost{
-  border-radius: 9px;
+.Game{
+  width: 140px;
+  height: 150px;
   background-image: url('https://loremflickr.com/320/240');
-  background-size: cover;
+  border-radius: 20px;
+  margin: 15px;
 }
-.CardPost ion-card-header{
-  padding: 0px;
+.ContGame{
+  background: linear-gradient(180deg, rgba(36, 34, 82, 0.5) 0%, rgba(36, 34, 82, 0.5) 49.42%, #242252 70.55%);  
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
 }
-.CardPost ion-card-content{
-  padding: 0px;
-}
-.ContCardPost{
-  background-color: rgba(153, 135, 255, 0.5);
-  padding: 20px;
-}
-.CardPost ion-card-header h2{
+.ContGame h2{
+  font-family: var(--font-gugi);
+  font-size: 12px;
   text-align: center;
-  font-size: 20px;
-  margin: 5px 0px;
-  color: #fff;
-}
-.CardPost ion-card-content p{
-  text-align: left;
-  font-size: 11px;
-  margin: 2px 0px;
-  color: #242252;
+  color: #FFFFFF;
+  width: 100%;
 }
 </style>
