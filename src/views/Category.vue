@@ -11,9 +11,9 @@
     </ion-header>
     <ion-content>
       <div class="AllContPost">
-        <h1 class="Gugi titlePost">Actuality</h1>
+        <h1 class="Gugi titlePost">FPS Game</h1>
         <div class="AllCardPosts">
-          <router-link to="/posts/sluug">
+          <router-link to="/post">
             <ion-card class="CardPost">
               <div class="ContCardPost">
                 <ion-card-header>
@@ -26,7 +26,7 @@
               </div>
             </ion-card>
           </router-link>
-          <router-link to="/posts/sluug">
+          <router-link to="/post">
             <ion-card class="CardPost">
               <div class="ContCardPost">
                 <ion-card-header>
@@ -39,7 +39,7 @@
               </div>
             </ion-card>
           </router-link>
-          <router-link to="/posts/sluug">
+          <router-link to="/post">
             <ion-card class="CardPost">
               <div class="ContCardPost">
                 <ion-card-header>

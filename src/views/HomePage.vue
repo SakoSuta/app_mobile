@@ -25,7 +25,9 @@
         <router-link to="/Login">Login</router-link><br>
         <router-link to="/Register">Register</router-link><br>
         <router-link to="/Contact">Contact</router-link><br>
-        <router-link to="/Posts">Posts</router-link><br>
+        <router-link to="/posts">Posts</router-link><br>
+        <router-link to="/Posts/sluggg">PostBySlug</router-link><br>
+        <router-link to="/Category/sluggg">Category</router-link><br>
       </div>
     </ion-content>
   </ion-page>

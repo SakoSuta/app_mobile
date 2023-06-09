@@ -6,6 +6,7 @@ import LoginPage from '../views/Auth/Login.vue';
 import ContactPage from '../views/Contact.vue';
 import PostPage from '../views/Posts.vue';
 import PostBySlugPage from '../views/PostBySlug.vue';
+import CategoryPage from '../views/Category.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -38,9 +39,14 @@ const routes: Array<RouteRecordRaw> = [
     component: PostPage
   },
   {
-    path: '/post',
-    name: 'PostBySlug',
+    path: '/posts/:slug',
+    name: 'PostsBySlug',
     component: PostBySlugPage
+  },
+  {
+    path: '/Category/:slug',
+    name: 'Category',
+    component: CategoryPage
   },
 ]
 
