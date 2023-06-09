@@ -3,8 +3,9 @@
     <ion-header>
       <ion-toolbar>
         <div class="navPost">
-          <router-link to="/"><img src="Logo.png" alt="Logo"></router-link>
           <router-link to="/"><img src="Menu.png" alt="Menu"></router-link>
+          <router-link to="/"><img src="long_item.png" alt="Logo"></router-link>
+          <router-link to="/"><img src="search.png" alt="Search icon"></router-link>
         </div>
       </ion-toolbar>
     </ion-header>
