@@ -13,21 +13,21 @@
       <div class="AllContCate">
         <h1 class="Gugi titleCate">FPS Game</h1>
         <div class="AllGameCate">
-          <router-link to="/Game">
+          <router-link to="/Games/sluggg">
             <div class="Game">
               <div class="ContGame">
                 <h2>FPS gamqzdqdddddddddddddddddddddddz</h2>
               </div>
             </div>
           </router-link>
-          <router-link to="/Game">
+          <router-link to="/Games/sluggg">
             <div class="Game">
               <div class="ContGame">
                 <h2>FPS game AHH</h2>
               </div>
             </div>
           </router-link>
-          <router-link to="/Game">
+          <router-link to="/Games/sluggg">
             <div class="Game">
               <div class="ContGame">
                 <h2>FPS game AHH</h2>

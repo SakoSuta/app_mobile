@@ -45,12 +45,12 @@ const routes: Array<RouteRecordRaw> = [
     component: PostBySlugPage
   },
   {
-    path: '/Category/:slug',
+    path: '/category/:slug',
     name: 'Category',
     component: CategoryPage
   },
   {
-    path: '/Games/:slug',
+    path: '/games/:slug',
     name: 'Games',
     component: GamesPage
   },
