@@ -29,6 +29,7 @@
         <router-link to="/Posts/sluggg">PostBySlug</router-link><br>
         <router-link to="/Category/sluggg">Category</router-link><br>
         <router-link to="/Games/sluggg">Games</router-link><br>
+        <router-link to="/Users/cvgbhjzdq5">User</router-link><br>
       </div>
     </ion-content>
   </ion-page>

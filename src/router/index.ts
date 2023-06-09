@@ -8,6 +8,7 @@ import PostPage from '../views/Posts.vue';
 import PostBySlugPage from '../views/PostBySlug.vue';
 import CategoryPage from '../views/Category.vue';
 import GamesPage from '../views/Games.vue';
+import UserPage from '../views/User.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -53,6 +54,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/games/:slug',
     name: 'Games',
     component: GamesPage
+  },
+  {
+    path: '/users/:uuid',
+    name: 'Users',
+    component: UserPage
   },
 ]
 
