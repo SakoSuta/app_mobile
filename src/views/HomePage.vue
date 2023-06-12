@@ -1,19 +1,15 @@
 <template>
   <ion-page>
     <ion-header>
-        <div class="NavHome">
-          <router-link to="/"><img src="Menu.png" alt="Menu"></router-link>
-          <router-link to="/"><img src="long_item.png" alt="Logo"></router-link>
-          <router-link to="/"><img src="search.png" alt="Search icon"></router-link>
-        </div>
+        <Nav></Nav>
     </ion-header>
 
     <ion-content>
       <div class="grade"></div>
       <div class="WelcomeSec">
-        <h1 class="Goldman">Discover all available subscriptions</h1>
+        <h1 class="WelcomTitle">Discover all available subscriptions</h1>
         <div class="AllPlanet">
-          <img src="Planet.png" alt="Planet Saturne" class="Planet">
+          <img src="Planet.png" alt="All Planet" class="Planet">
         </div>
         <div>
           <img src="Double_down_arrow.png" alt="Go Down">
@@ -36,16 +32,13 @@
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage } from '@ionic/vue';
 </script>
 
 <style>
-.Goldman{
+.WelcomTitle{
   font-family: var(--font-goldman);
   font-weight: 700;
-}
-.Goldman700{
-  font-family: var(--font-goldman-bold);
 }
 .grade{
   width: 100%;

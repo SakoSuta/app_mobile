@@ -1,27 +1,21 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar>
-        <div class="navPost">
-          <router-link to="/"><img src="Menu.png" alt="Menu"></router-link>
-          <router-link to="/"><img src="long_item.png" alt="Logo"></router-link>
-          <router-link to="/"><img src="search.png" alt="Search icon"></router-link>
-        </div>
-      </ion-toolbar>
+      <Nav :background-color="'#24223E'"></Nav>
     </ion-header>
     <ion-content>
       <div class="AllContPost">
-        <h1 class="Gugi titlePost">Actuality</h1>
+        <h1 class="titlePost">Actuality</h1>
         <div class="AllCardPosts">
           <router-link to="/posts/sluug">
             <ion-card class="CardPost">
               <div class="ContCardPost">
                 <ion-card-header>
-                  <h2 class="Gugi">Titre hyper mega cool de tous les temps et de tous les univers interstellaire</h2>
+                  <h2>Titre hyper mega cool de tous les temps et de tous les univers interstellaire</h2>
                 </ion-card-header>
                 <ion-card-content>
-                  <p class="Gugi">Publish at 20/07/2023</p>
-                  <p class="Gugi">By Emilie Montpre</p>
+                  <p>Publish at 20/07/2023</p>
+                  <p>By Emilie Montpre</p>
                 </ion-card-content>
               </div>
             </ion-card>
@@ -30,11 +24,11 @@
             <ion-card class="CardPost">
               <div class="ContCardPost">
                 <ion-card-header>
-                  <h2 class="Gugi">Titre hyper mega cool de tous les temps et de tous les univers interstellaire</h2>
+                  <h2>Titre hyper mega cool de tous les temps et de tous les univers interstellaire</h2>
                 </ion-card-header>
                 <ion-card-content>
-                  <p class="Gugi">Publish at 20/07/2023</p>
-                  <p class="Gugi">By Emilie Montpre</p>
+                  <p>Publish at 20/07/2023</p>
+                  <p>By Emilie Montpre</p>
                 </ion-card-content>
               </div>
             </ion-card>
@@ -43,11 +37,11 @@
             <ion-card class="CardPost">
               <div class="ContCardPost">
                 <ion-card-header>
-                  <h2 class="Gugi">Titre hyper mega cool de tous les temps et de tous les univers interstellaire</h2>
+                  <h2>Titre hyper mega cool de tous les temps et de tous les univers interstellaire</h2>
                 </ion-card-header>
                 <ion-card-content>
-                  <p class="Gugi">Publish at 20/07/2023</p>
-                  <p class="Gugi">By Emilie Montpre</p>
+                  <p>Publish at 20/07/2023</p>
+                  <p>By Emilie Montpre</p>
                 </ion-card-content>
               </div>
             </ion-card>
@@ -59,21 +53,10 @@
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonPage, IonHeader, IonToolbar } from '@ionic/vue';
+import { IonContent, IonPage, IonHeader, IonCard, IonCardHeader, IonCardContent} from '@ionic/vue';
 </script>
 
 <style>
-.Gugi{
-  font-family: var(--font-gugi);
-}
-.navPost{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 74px;
-  background-color: #24223E;
-  padding: 0px 26px;
-}
 .AllContPost{
   display: flex;
   flex-direction: column;
@@ -81,6 +64,7 @@ import { IonContent, IonPage, IonHeader, IonToolbar } from '@ionic/vue';
   justify-content: center;
 }
 .titlePost{
+  font-family: var(--font-gugi);
   font-size: 28px;
   color: #FFFFFF;
   margin: 30px 0px;
@@ -98,9 +82,11 @@ import { IonContent, IonPage, IonHeader, IonToolbar } from '@ionic/vue';
   background-size: cover;
 }
 .CardPost ion-card-header{
+  font-family: var(--font-gugi);
   padding: 0px;
 }
 .CardPost ion-card-content{
+  font-family: var(--font-gugi);
   padding: 0px;
 }
 .ContCardPost{

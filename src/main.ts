@@ -24,9 +24,15 @@ import '@ionic/vue/css/display.css';
 import './theme/variables.css';
 // import './theme/MyVariables.scss';
 
+import Navigation from './components/Navigation.vue';
+import OtherNavigation from './components/OtherNavigation.vue';
+
 const app = createApp(App)
   .use(IonicVue)
   .use(router);
+
+  app.component('Nav', Navigation);
+  app.component('NavAuth', OtherNavigation);
   
 router.isReady().then(() => {
   app.mount('#app');

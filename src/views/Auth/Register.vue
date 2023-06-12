@@ -1,23 +1,21 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar>
-        <div class="navlog"><router-link to="/"><img src="Very_long_item.png" alt="Long Logo"></router-link></div>
-      </ion-toolbar>
+      <NavAuth></NavAuth>
     </ion-header>
 
     <ion-content :fullscreen="true">
       <div class="Go_Back" onclick="history.back()">
         <img src="Go_Back.png" alt="Return button">
       </div>
-      <div class="FormuLogin">
+      <div class="FormuRegister">
         <form action="" class="formR">
-          <h1 class="Gugi titleR">Register</h1>
-          <input type="text" placeholder="Pseudo" class="Gugi inputR">
-          <input type="email" placeholder="Email" class="Gugi inputR">
-          <input type="password" placeholder="Password" class="Gugi inputR">
-          <router-link to="/login" class="gugi aR">You already have an account ?</router-link>
-          <button class="Gugi buttonR">Register</button>
+          <h1 class="titleR">Register</h1>
+          <input type="text" placeholder="Pseudo" class="inputR">
+          <input type="email" placeholder="Email" class="inputR">
+          <input type="password" placeholder="Password" class="inputR">
+          <router-link to="/login" class="aR">You already have an account ?</router-link>
+          <button class="buttonR">Register</button>
         </form>
       </div>
     </ion-content>
@@ -25,26 +23,13 @@
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage } from '@ionic/vue';
 </script>
 
 <style>
-.Gugi{
-  font-family: var(--font-gugi);
-}
-
-.navlog{
+.FormuRegister{
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 74px;
-  background-color: #24223E;
-}
-
-.FormuLogin{
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
   height: 100%;
   background-color: #242131;
   padding: 10px 0px;
@@ -53,6 +38,7 @@ import { IonContent, IonHeader, IonPage, IonToolbar } from '@ionic/vue';
 }
 
 .titleR{
+  font-family: var(--font-gugi);
   font-size: 28px !important;
 }
 
@@ -66,6 +52,7 @@ import { IonContent, IonHeader, IonPage, IonToolbar } from '@ionic/vue';
 }
 
 .inputR{
+  font-family: var(--font-gugi);
   width: 100%;
   height: 40px;
   margin: 5px !important;
@@ -88,12 +75,14 @@ import { IonContent, IonHeader, IonPage, IonToolbar } from '@ionic/vue';
 }
 
 .aR{
+  font-family: var(--font-gugi);
   color: #9987FF !important;
   font-size: 14px;
   margin: 5px !important;
 }
 
 .buttonR{
+  font-family: var(--font-gugi);
   width: 80%;
   margin: 18px;
   border-radius: 9px !important;

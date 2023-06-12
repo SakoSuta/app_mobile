@@ -1,9 +1,7 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar>
-        <div class="navlog"><router-link to="/"><img src="Very_long_item.png" alt="Long Logo"></router-link></div>
-      </ion-toolbar>
+        <NavAuth></NavAuth>
     </ion-header>
 
     <ion-content :fullscreen="true">
@@ -12,11 +10,11 @@
       </div>
       <div class="FormuLogin">
         <form action="" class="formL">
-          <h1 class="Gugi titleL">Login</h1>
-          <input type="email" placeholder="Email" class="Gugi inputL">
-          <input type="password" placeholder="Password" class="Gugi inputL">
-          <router-link to="/register" class="gugi aL">Not registered yet?</router-link>
-          <button class="Gugi buttonL">Connect</button>
+          <h1 class="titleL">Login</h1>
+          <input type="email" placeholder="Email" class="inputL">
+          <input type="password" placeholder="Password" class="inputL">
+          <router-link to="/register" class="aL">Not registered yet?</router-link>
+          <button class="buttonL">Connect</button>
         </form>
       </div>
     </ion-content>
@@ -24,30 +22,13 @@
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage } from '@ionic/vue';
 </script>
 
 <style>
-ion-toolbar{
-  --background: #24223E;
-  --color: #fff;
-}
-.Gugi{
-  font-family: var(--font-gugi);
-}
-
-.navlog{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 74px;
-  background-color: #24223E;
-}
-
 .FormuLogin{
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   height: 100%;
   background-color: #242131;
   padding: 10px 0px;
@@ -56,6 +37,7 @@ ion-toolbar{
 }
 
 .titleL{
+  font-family: var(--font-gugi);
   font-size: 28px !important;
 }
 
@@ -69,6 +51,7 @@ ion-toolbar{
 }
 
 .inputL{
+  font-family: var(--font-gugi);
   width: 100%;
   height: 40px !important;
   margin: 5px !important;
@@ -91,12 +74,14 @@ ion-toolbar{
 }
 
 .aL{
+  font-family: var(--font-gugi);
   color: #9987FF !important;
   font-size: 14px;
   margin: 2px !important;
 }
 
 .buttonL{
+  font-family: var(--font-gugi);
   width: 80%;
   margin: 18px;
   border-radius: 9px !important;

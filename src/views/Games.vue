@@ -1,11 +1,7 @@
 <template>
   <ion-page>
     <ion-header>
-        <div class="navPostS">
-          <router-link to="/"><img src="Menu.png" alt="Menu"></router-link>
-          <router-link to="/"><img src="long_item.png" alt="Logo"></router-link>
-          <router-link to="/"><img src="search.png" alt="Search icon"></router-link>
-        </div>
+        <Nav :background-color="'#24223E'"></Nav>
     </ion-header>
     <ion-content>
       <router-link to="/posts" class="Go_BackBS">

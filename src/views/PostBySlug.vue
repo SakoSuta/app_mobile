@@ -1,11 +1,7 @@
 <template>
   <ion-page>
     <ion-header>
-        <div class="navPostS">
-          <router-link to="/"><img src="Menu.png" alt="Menu"></router-link>
-          <router-link to="/"><img src="long_item.png" alt="Logo"></router-link>
-          <router-link to="/"><img src="search.png" alt="Search icon"></router-link>
-        </div>
+      <Nav :background-color="'#24223E'"></Nav>
     </ion-header>
     <ion-content>
       <router-link to="/posts" class="Go_BackBS">
@@ -26,15 +22,6 @@ import { IonContent, IonPage, IonHeader } from '@ionic/vue';
 </script>
 
 <style>
-.navPostS{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 74px;
-  background-color: #24223E;
-  /* background: linear-gradient(180deg, rgba(36,34,82,0.74) 0%, rgba(36,34,82,0.4) 100%); */
-  padding: 0px 26px;
-}
 .Go_BackBS{
   display: flex;
   justify-content: flex-start;

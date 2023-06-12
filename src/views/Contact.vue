@@ -1,22 +1,16 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar>
-        <div class="navCont">
-          <router-link to="/"><img src="Menu.png" alt="Menu"></router-link>
-          <router-link to="/"><img src="long_item.png" alt="Logo"></router-link>
-          <router-link to="/"><img src="search.png" alt="Search icon"></router-link>
-        </div>
-      </ion-toolbar>
+      <Nav :background-color="'#242131'"></Nav>
     </ion-header>
     <ion-content>
-      <div class="Gugi contactUs">
+      <div class="contactUs">
       <div class="Go_Back" onclick="history.back()">
         <img src="Go_Back.png" alt="Return button">
       </div>
         <div class="ContentCont">
           <div class="ContCont">
-            <h1 class="">Contact us</h1>
+            <h1 class="titleCont">Contact us</h1>
             <form action="" class="formCont">
               <input type="text" placeholder="Name" class="inputCont">
               <input type="email" placeholder="Email" class="inputCont">
@@ -34,8 +28,8 @@
           </ion-card-header>
 
           <ion-card-content>
-            <h2 class="titleCardCont Gugi">Mail us</h2>
-            <p class="ContCardCont Gugi">EmilieMontpre@outlook.com</p>
+            <h2 class="titleCardCont">Mail us</h2>
+            <p class="ContCardCont">EmilieMontpre@outlook.com</p>
           </ion-card-content>
         </ion-card>
         <ion-card class="CardCont">
@@ -44,8 +38,8 @@
           </ion-card-header>
 
           <ion-card-content>
-            <h2 class="titleCardCont Gugi">Call us</h2>
-            <p class="ContCardCont Gugi">06 73 22 01 37</p>
+            <h2 class="titleCardCont">Call us</h2>
+            <p class="ContCardCont">06 73 22 01 37</p>
           </ion-card-content>
         </ion-card>
         <ion-card class="CardCont">
@@ -54,9 +48,9 @@
           </ion-card-header>
 
           <ion-card-content>
-            <h2 class="titleCardCont Gugi">Visit us</h2>
+            <h2 class="titleCardCont">Visit us</h2>
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.356384458011!2d2.363049900000007!3d48.870482300000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e0989542143%3A0x9384848c375ced98!2s%C3%89cole%20Webstart!5e0!3m2!1sfr!2sfr!4v1686136783090!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <p class="ContCardCont Gugi">Webstart à Paris : 19 rue Yves Toudic 75010 Paris</p>
+            <p class="ContCardCont">Webstart at Paris : 19 rue Yves Toudic 75010 Paris</p>
           </ion-card-content>
         </ion-card>
       </div>
@@ -69,12 +63,6 @@ import { IonContent, IonPage, IonHeader, IonToolbar, IonCard, IonCardHeader, Ion
 </script>
 
 <style>
-.Gugi{
-  font-family: var(--font-gugi);
-}
-ion-content{
-  --background: #242131;
-}
 .Go_Back{
   display: flex;
   justify-content: flex-start;
@@ -84,15 +72,8 @@ ion-content{
   background-color: #242131;
   padding-left: 25px;
 }
-.navCont{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 74px;
-  background-color: #242131;
-  padding: 0px 26px;
-}
 .titleCont{
+  font-family: var(--font-gugi);
   font-size: 28px !important;
 }
 .contactUs{
@@ -122,6 +103,7 @@ ion-content{
   padding: 30px 0px;
 }
 .inputCont{
+  font-family: var(--font-gugi);
   width: 100%;
   height: 40px !important;
   margin: 5px !important;
@@ -143,6 +125,7 @@ ion-content{
   outline: none;
 }
 .textaCont{
+  font-family: var(--font-gugi);
   width: 100%;
   min-width: 100%;
   max-width: 100%;
@@ -165,6 +148,7 @@ ion-content{
   outline: none;
 }
 .buttonSend{
+  font-family: var(--font-gugi);
   width: 80%;
   height: 34px !important;
   margin: 5px !important;
@@ -180,6 +164,7 @@ ion-content{
   flex-direction: column;
   align-items: center;
   width: 100%;
+  background-color: #242131;
   padding: 0px 20px;
 }
 .CardCont{
@@ -199,11 +184,13 @@ ion-content{
   width: max-content;
 }
 .titleCardCont{
+  font-family: var(--font-gugi);
   font-size: 18px !important;
   margin: 10px 0px !important;
   color: #fff;
 }
 .ContCardCont{
+  font-family: var(--font-gugi);
   width: max-content;
   font-size: 12px !important;
   margin: 10px 0px !important;

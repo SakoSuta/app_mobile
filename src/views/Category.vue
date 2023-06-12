@@ -1,17 +1,11 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar>
-        <div class="navPost">
-          <router-link to="/"><img src="Menu.png" alt="Menu"></router-link>
-          <router-link to="/"><img src="long_item.png" alt="Logo"></router-link>
-          <router-link to="/"><img src="search.png" alt="Search icon"></router-link>
-        </div>
-      </ion-toolbar>
+      <Nav :background-color="'#24223E'"></Nav>
     </ion-header>
     <ion-content>
       <div class="AllContCate">
-        <h1 class="Gugi titleCate">FPS Game</h1>
+        <h1 class="titleCate">FPS Game</h1>
         <div class="AllGameCate">
           <router-link to="/Games/sluggg">
             <div class="Game">
@@ -45,17 +39,6 @@ import { IonContent, IonPage, IonHeader, IonToolbar } from '@ionic/vue';
 </script>
 
 <style>
-.Gugi{
-  font-family: var(--font-gugi);
-}
-.navPost{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 74px;
-  background-color: #24223E;
-  padding: 0px 26px;
-}
 .AllContCate{
   padding: 0px 26px;
 }
@@ -79,6 +62,7 @@ import { IonContent, IonPage, IonHeader, IonToolbar } from '@ionic/vue';
 }
 
 .titleCate{
+  font-family: var(--font-gugi);
   font-size: 28px;
   color: #FFFFFF;
   margin: 30px 0px;

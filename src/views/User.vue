@@ -1,20 +1,14 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar>
-        <div class="navCont">
-          <router-link to="/"><img src="Menu.png" alt="Menu"></router-link>
-          <router-link to="/"><img src="long_item.png" alt="Logo"></router-link>
-          <router-link to="/"><img src="search.png" alt="Search icon"></router-link>
-        </div>
-      </ion-toolbar>
+      <Nav  :background-color="'#242131'"></Nav>
     </ion-header>
     <ion-content>
       <router-link to="/posts" class="Go_Back">
         <img src="Go_Back.png" alt="Return button">
       </router-link>
       <div class="AllContUser">
-        <h1 class="Gugi titleUser">Hi, User</h1>
+        <h1 class="titleUser">Hi, User</h1>
           <div class="CardUser">
             <img src="https://loremflickr.com/320/240" alt="Profile Photo" class="UserPic">
             <div class="UserInfo">
