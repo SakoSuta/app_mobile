@@ -1,7 +1,9 @@
 <template>
   <ion-header>
     <div class="NavigateAuth">
-      <router-link to="/"><img src="Very_long_item.png" alt="Logo"></router-link>
+      <router-link to="/"
+        ><img src="Logo/Very_long_item.svg" alt="Logo"
+      /></router-link>
     </div>
   </ion-header>
 </template>
@@ -12,6 +14,6 @@
   justify-content: center;
   align-items: center;
   height: 74px;
-  background-color: #24223E;
+  background-color: #24223e;
 }
 </style>

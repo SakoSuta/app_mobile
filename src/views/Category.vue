@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonPage, IonHeader, IonToolbar } from '@ionic/vue';
+import { IonContent, IonPage } from '@ionic/vue';
 </script>
 
 <style>

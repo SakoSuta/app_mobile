@@ -3,15 +3,17 @@
     <NavAuth></NavAuth>
     <ion-content :fullscreen="true">
       <div class="Go_Back" onclick="history.back()">
-        <img src="Go_Back.png" alt="Return button">
+        <img src="Icone/Go_Back.svg" alt="Return button" />
       </div>
       <div class="FormuRegister">
         <form action="" class="formR">
           <h1 class="titleR">Register</h1>
-          <input type="text" placeholder="Pseudo" class="inputR">
-          <input type="email" placeholder="Email" class="inputR">
-          <input type="password" placeholder="Password" class="inputR">
-          <router-link to="/login" class="aR">You already have an account ?</router-link>
+          <input type="text" placeholder="Pseudo" class="inputR" />
+          <input type="email" placeholder="Email" class="inputR" />
+          <input type="password" placeholder="Password" class="inputR" />
+          <router-link to="/login" class="aR"
+            >You already have an account ?</router-link
+          >
           <button class="buttonR">Register</button>
         </form>
       </div>
@@ -20,11 +22,11 @@
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage } from '@ionic/vue';
+import { IonContent, IonPage } from "@ionic/vue";
 </script>
 
 <style>
-.FormuRegister{
+.FormuRegister {
   display: flex;
   justify-content: center;
   height: 100%;
@@ -34,12 +36,12 @@ import { IonContent, IonHeader, IonPage } from '@ionic/vue';
   height: 100vh;
 }
 
-.titleR{
+.titleR {
   font-family: var(--font-gugi);
   font-size: 28px !important;
 }
 
-.formR{
+.formR {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -48,7 +50,7 @@ import { IonContent, IonHeader, IonPage } from '@ionic/vue';
   height: 50% !important;
 }
 
-.inputR{
+.inputR {
   font-family: var(--font-gugi);
   width: 100%;
   height: 40px;
@@ -56,41 +58,41 @@ import { IonContent, IonHeader, IonPage } from '@ionic/vue';
   padding-left: 20px;
   border-radius: 9px;
   border: none;
-  background-color: #2F2B45;
-  color: #9987FF !important;
+  background-color: #2f2b45;
+  color: #9987ff !important;
   font-size: 12px;
   padding: 20px;
 }
 
-.inputR::placeholder{
-  color: #6459A2 !important;
+.inputR::placeholder {
+  color: #6459a2 !important;
   font-size: 12px;
 }
 
-.inputR:focus{
+.inputR:focus {
   outline: none;
 }
 
-.aR{
+.aR {
   font-family: var(--font-gugi);
-  color: #9987FF !important;
+  color: #9987ff !important;
   font-size: 14px;
   margin: 5px !important;
 }
 
-.buttonR{
+.buttonR {
   font-family: var(--font-gugi);
   width: 80%;
   margin: 18px;
   border-radius: 9px !important;
   border: none !important;
-  background-color: #9987FF;
+  background-color: #9987ff;
   color: #fff !important;
   font-size: 12px;
   padding: 10px;
 }
 
-.Go_Back{
+.Go_Back {
   display: flex;
   justify-content: flex-start;
   align-items: center;

@@ -1,49 +1,50 @@
 <template>
   <ion-page>
-      <Nav></Nav>
+    <Nav></Nav>
     <ion-content>
       <div class="grade"></div>
       <div class="WelcomeSec">
         <h1 class="WelcomTitle">Discover all available subscriptions</h1>
         <div class="AllPlanet">
-          <img src="Planet.png" alt="All Planet" class="Planet">
+          <img src="Planet/Planet.png" alt="All Planet" class="Planet" />
         </div>
         <div>
-          <img src="Double_down_arrow.png" alt="Go Down">
+          <img src="Icone/Double_down_arrow.svg" alt="Go Down" />
         </div>
       </div>
-      
+
       <div>
-        <strong>Where we go ?</strong><br>
-        <router-link to="/Login">Login</router-link><br>
-        <router-link to="/Register">Register</router-link><br>
-        <router-link to="/Contact">Contact</router-link><br>
-        <router-link to="/posts">Posts</router-link><br>
-        <router-link to="/Posts/sluggg">PostBySlug</router-link><br>
-        <router-link to="/Category/sluggg">Category</router-link><br>
-        <router-link to="/Games/sluggg">Games</router-link><br>
-        <router-link to="/Users/cvgbhjzdq5">User</router-link><br>
+        <strong>Where we go ?</strong><br />
+        <router-link to="/Login">Login</router-link><br />
+        <router-link to="/Register">Register</router-link><br />
+        <router-link to="/Contact">Contact</router-link><br />
+        <router-link to="/posts">Posts</router-link><br />
+        <router-link to="/Posts/sluggg">PostBySlug</router-link><br />
+        <router-link to="/Category/sluggg">Category</router-link><br />
+        <router-link to="/Games/sluggg">Games</router-link><br />
+        <router-link to="/Users/cvgbhjzdq5">User</router-link><br />
       </div>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage } from '@ionic/vue';
+import { IonContent, IonPage } from "@ionic/vue";
 </script>
 
 <style>
-.WelcomTitle{
+.WelcomTitle {
   font-family: var(--font-goldman);
   font-weight: 700;
 }
-.grade{
+.grade {
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, #242252 39.53%, rgba(36, 34, 82, 0) 100%);  position: absolute;
+  background: linear-gradient(180deg, #242252 39.53%, rgba(36, 34, 82, 0) 100%);
+  position: absolute;
   z-index: -1;
 }
-.NavHome{
+.NavHome {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,7 +52,7 @@ import { IonContent, IonHeader, IonPage } from '@ionic/vue';
   background-color: #242252;
   padding: 0px 26px;
 }
-.WelcomeSec{
+.WelcomeSec {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -61,12 +62,12 @@ import { IonContent, IonHeader, IonPage } from '@ionic/vue';
   height: 100%;
   width: 100%;
 }
-.WelcomeSec h1{
+.WelcomeSec h1 {
   text-align: center;
-  color: #9987FF;
+  color: #9987ff;
   width: 90%;
 }
-.AllPlanet{
+.AllPlanet {
   display: flex;
   justify-content: center;
   width: 90%;
