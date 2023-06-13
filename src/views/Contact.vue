@@ -1,8 +1,6 @@
 <template>
   <ion-page>
-    <ion-header>
-      <Nav :background-color="'#242131'"></Nav>
-    </ion-header>
+    <Nav :background-color="'#242131'"></Nav>
     <ion-content>
       <div class="contactUs">
       <div class="Go_Back" onclick="history.back()">

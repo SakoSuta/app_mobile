@@ -1,9 +1,6 @@
 <template>
   <ion-page>
-    <ion-header>
-      <NavAuth></NavAuth>
-    </ion-header>
-
+    <NavAuth></NavAuth>
     <ion-content :fullscreen="true">
       <div class="Go_Back" onclick="history.back()">
         <img src="Go_Back.png" alt="Return button">

@@ -1,7 +1,9 @@
 <template>
-  <div class="NavigateAuth">
-    <router-link to="/"><img src="Very_long_item.png" alt="Logo"></router-link>
-  </div>
+  <ion-header>
+    <div class="NavigateAuth">
+      <router-link to="/"><img src="Very_long_item.png" alt="Logo"></router-link>
+    </div>
+  </ion-header>
 </template>
 
 <style>

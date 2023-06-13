@@ -1,8 +1,6 @@
 <template>
   <ion-page>
-    <ion-header>
-      <Nav  :background-color="'#242131'"></Nav>
-    </ion-header>
+    <Nav  :background-color="'#242131'"></Nav>
     <ion-content>
       <router-link to="/posts" class="Go_Back">
         <img src="Go_Back.png" alt="Return button">

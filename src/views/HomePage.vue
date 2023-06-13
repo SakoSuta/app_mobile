@@ -1,9 +1,6 @@
 <template>
   <ion-page>
-    <ion-header>
-        <Nav></Nav>
-    </ion-header>
-
+      <Nav></Nav>
     <ion-content>
       <div class="grade"></div>
       <div class="WelcomeSec">

@@ -1,8 +1,6 @@
 <template>
   <ion-page>
-    <ion-header>
-      <Nav :background-color="'#24223E'"></Nav>
-    </ion-header>
+    <Nav :background-color="'#24223E'"></Nav>
     <ion-content>
       <div class="AllContCate">
         <h1 class="titleCate">FPS Game</h1>

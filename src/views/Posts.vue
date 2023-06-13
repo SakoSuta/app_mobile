@@ -1,8 +1,6 @@
 <template>
   <ion-page>
-    <ion-header>
-      <Nav :background-color="'#24223E'"></Nav>
-    </ion-header>
+    <Nav :background-color="'#24223E'"></Nav>
     <ion-content>
       <div class="AllContPost">
         <h1 class="titlePost">Actuality</h1>
