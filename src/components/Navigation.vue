@@ -29,7 +29,7 @@
       </div>
     </ion-content>
   </ion-menu>
-  <ion-modal ref="modal" trigger="open-modal" :can-dismiss="canDismiss" :presenting-element="page?.$el">
+  <!-- <ion-modal ref="modal" trigger="open-modal" :can-dismiss="canDismiss" :presenting-element="page?.$el">
     <ion-header>
       <ion-toolbar>
         <ion-title>Modal</ion-title>
@@ -43,11 +43,13 @@
         Contenu
       </p>
     </ion-content>
-  </ion-modal>
+  </ion-modal> -->
   <ion-header>
     <div class="Navigate" :style="navStyles" id="main-content">
       <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
+        <ion-menu-button>
+          <img src="Icone/Menu.svg" alt="Menu" />
+        </ion-menu-button>
       </ion-buttons>
       <router-link to="/"><img :src="logo" alt="Logo" /></router-link>
       <ion-button id="open-modal" expand="block">Open</ion-button>
