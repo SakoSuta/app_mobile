@@ -6,6 +6,10 @@
     </ion-header>
     <ion-content>
       <div class="ContMenu">
+        <router-link to="/" class="ItemMenu">
+          <img src="Icone/Home.svg" alt="Icon" />
+          <span>Home</span>
+        </router-link>
         <router-link to="/users/dqz45" class="ItemMenu">
           <img src="Icone/User.svg" alt="Icon" />
           <span>Account</span>
@@ -13,10 +17,6 @@
         <router-link to="/posts" class="ItemMenu">
           <img src="Icone/News.svg" alt="Icon" />
           <span>All News</span>
-        </router-link>
-        <router-link to="/" class="ItemMenu">
-          <img src="Icone/Subscription.svg" alt="Icon" />
-          <span>Subscription</span>
         </router-link>
         <router-link to="/contact" class="ItemMenu">
           <img src="Icone/Mail.svg" alt="Icon" />
