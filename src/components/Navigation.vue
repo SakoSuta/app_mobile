@@ -29,20 +29,46 @@
       </div>
     </ion-content>
   </ion-menu>
+  <ion-modal ref="modal" trigger="open-modal" :can-dismiss="canDismiss" :presenting-element="page?.$el">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Modal</ion-title>
+        <ion-buttons slot="end">
+          <ion-button @click="dismiss">Close</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <p>
+        Contenu
+      </p>
+    </ion-content>
+  </ion-modal>
   <ion-header>
     <div class="Navigate" :style="navStyles" id="main-content">
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
       <router-link to="/"><img :src="logo" alt="Logo" /></router-link>
-      <router-link to="/"
-        ><img src="Icone/search.svg" alt="Search icon"
-      /></router-link>
+      <ion-button id="open-modal" expand="block">Open</ion-button>
     </div>
   </ion-header>
 </template>
 
-<script>
+<script lang="ts">
+import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage } from '@ionic/vue';
+import { ref } from 'vue';
+
+const page = ref(null);
+const modal = ref(null);
+
+function dismiss() {
+  modal.value.$el.dismiss();
+}
+
+async function canDismiss(data?: any, role?: string) {
+  return role !== 'gesture';
+}
 export default {
   props: {
     logoPath: {
@@ -62,6 +88,11 @@ export default {
       return {
         backgroundColor: this.backgroundColor || "#242252",
       };
+    },
+  },
+  methods: {
+    openModal() {
+      this.$refs.modal.open();
     },
   },
 };
