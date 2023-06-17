@@ -32,14 +32,32 @@
   <ion-modal ref="modal" trigger="open-modal" :presenting-element="presentingElement">
     <ion-header>
       <ion-toolbar>
-        <ion-title>Modal</ion-title>
+        <ion-title>Search...</ion-title>
         <ion-buttons slot="end">
           <ion-button @click="dismiss()">Close</ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      content
+      <ion-segment v-model="selectedSegment">
+        <ion-segment-button value="Categories">
+          <ion-label>Categories</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="Game">
+          <ion-label>Game</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+    <div v-if="selectedSegment === 'Categories'">
+      <ion-searchbar placeholder="Search your Categories"></ion-searchbar>
+      <p>Contenu par défaut</p>
+    </div>
+
+    <div v-if="selectedSegment === 'Game'">
+      <ion-searchbar placeholder="Search your Game"></ion-searchbar>
+      <p>Contenu du segment</p>
+    </div>
+
     </ion-content>
   </ion-modal>
   <ion-header>
@@ -72,10 +90,18 @@
     IonPage,
     IonMenu,
     IonMenuButton,
+    IonSegment,
+    IonSegmentButton,
   } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
+    data() {
+      return {
+        presentingElement: null,
+        selectedSegment: 'Categories',
+      };
+    },
     components: {
       IonButtons,
       IonButton,
@@ -92,31 +118,28 @@
       IonPage,
       IonMenu,
       IonMenuButton,
+      IonSegment,
+      IonSegmentButton,
     },
-  props: {
-    logoPath: {
-      type: String,
-      default: "Logo/long_item.svg",
+    props: {
+      logoPath: {
+        type: String,
+        default: "Logo/long_item.svg",
+      },
+      backgroundColor: {
+        type: String,
+        default: "#242252",
+      },
     },
-    backgroundColor: {
-      type: String,
-      default: "#242252",
-    },
-  },
-  computed: {
-    logo() {
-      return this.logoPath || "Logo/long_item.svg";
-    },
-    navStyles() {
-      return {
-        backgroundColor: this.backgroundColor || "#242252",
-      };
-    },
-  },
-    data() {
-      return {
-        presentingElement: null,
-      };
+    computed: {
+      logo() {
+        return this.logoPath || "Logo/long_item.svg";
+      },
+      navStyles() {
+        return {
+          backgroundColor: this.backgroundColor || "#242252",
+        };
+      },
     },
     methods: {
       dismiss() {
