@@ -29,21 +29,19 @@
       </div>
     </ion-content>
   </ion-menu>
-  <!-- <ion-modal ref="modal" trigger="open-modal" :can-dismiss="canDismiss" :presenting-element="page?.$el">
+  <ion-modal ref="modal" trigger="open-modal" :presenting-element="presentingElement">
     <ion-header>
       <ion-toolbar>
         <ion-title>Modal</ion-title>
         <ion-buttons slot="end">
-          <ion-button @click="dismiss">Close</ion-button>
+          <ion-button @click="dismiss()">Close</ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
-    <ion-content>
-      <p>
-        Contenu
-      </p>
+    <ion-content class="ion-padding">
+      content
     </ion-content>
-  </ion-modal> -->
+  </ion-modal>
   <ion-header>
     <div class="Navigate" :style="navStyles" id="main-content">
       <ion-buttons slot="start">
@@ -52,26 +50,45 @@
         </ion-menu-button>
       </ion-buttons>
       <router-link to="/"><img :src="logo" alt="Logo" /></router-link>
-      <ion-button id="open-modal" expand="block">Open</ion-button>
+      <ion-buttons id="open-modal"><img src="Icone\search.svg" alt="Search" /></ion-buttons>
     </div>
   </ion-header>
 </template>
 
 <script lang="ts">
-import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage } from '@ionic/vue';
-import { ref } from 'vue';
+  import {
+    IonButtons,
+    IonButton,
+    IonModal,
+    IonHeader,
+    IonContent,
+    IonToolbar,
+    IonTitle,
+    IonItem,
+    IonList,
+    IonAvatar,
+    IonImg,
+    IonLabel,
+    IonPage,
+  } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-const page = ref(null);
-const modal = ref(null);
-
-function dismiss() {
-  modal.value.$el.dismiss();
-}
-
-async function canDismiss(data?: any, role?: string) {
-  return role !== 'gesture';
-}
-export default {
+  export default defineComponent({
+    components: {
+      IonButtons,
+      IonButton,
+      IonModal,
+      IonHeader,
+      IonContent,
+      IonToolbar,
+      IonTitle,
+      IonItem,
+      IonList,
+      IonAvatar,
+      IonImg,
+      IonLabel,
+      IonPage,
+    },
   props: {
     logoPath: {
       type: String,
@@ -92,12 +109,20 @@ export default {
       };
     },
   },
-  methods: {
-    openModal() {
-      this.$refs.modal.open();
+    data() {
+      return {
+        presentingElement: null,
+      };
     },
-  },
-};
+    methods: {
+      dismiss() {
+        this.$refs.modal.$el.dismiss();
+      },
+    },
+    mounted() {
+      this.presentingElement = this.$refs.page.$el;
+    },
+  });
 </script>
 
 <style>
