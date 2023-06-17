@@ -70,6 +70,8 @@
     IonImg,
     IonLabel,
     IonPage,
+    IonMenu,
+    IonMenuButton,
   } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
@@ -88,6 +90,8 @@
       IonImg,
       IonLabel,
       IonPage,
+      IonMenu,
+      IonMenuButton,
     },
   props: {
     logoPath: {
