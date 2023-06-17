@@ -29,16 +29,16 @@
       </div>
     </ion-content>
   </ion-menu>
-  <ion-modal ref="modal" trigger="open-modal" :presenting-element="presentingElement">
+  <ion-modal ref="modal" trigger="open-modal" :presenting-element="presentingElement" class="IonModalS">
     <ion-header>
       <ion-toolbar>
-        <ion-title>Search...</ion-title>
+        <ion-title class="TitleModalS">Search</ion-title>
         <ion-buttons slot="end">
-          <ion-button @click="dismiss()">Close</ion-button>
+          <ion-button @click="dismiss()" class="CloseModalS">Close</ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="ion-padding">
+    <ion-content class="ion-padding ContModalS">
       <ion-segment v-model="selectedSegment">
         <ion-segment-button value="Categories">
           <ion-label>Categories</ion-label>
@@ -48,14 +48,93 @@
         </ion-segment-button>
       </ion-segment>
 
-    <div v-if="selectedSegment === 'Categories'">
+    <div v-if="selectedSegment === 'Categories'" class="SearchContent">
       <ion-searchbar placeholder="Search your Categories"></ion-searchbar>
-      <p>Contenu par défaut</p>
+      <p class="CountResult">6 results found</p>
+      <div class="AllResult">
+        <router-link to="/Category/sluggg">
+          <div class="ResultSearchCate">
+            <div class="ContResultCate">
+              <h2>FPS gamqzdqdddddddddddddddddddddddz</h2>
+              <img src="Category/tabler_viewfinder.svg" alt="Icone Category">
+            </div>
+          </div>
+        </router-link>
+        <router-link to="/Category/sluggg">
+          <div class="ResultSearchCate">
+            <div class="ContResultCate">
+              <h2>FPS game AHH</h2>
+              <img src="Category/cards.svg" alt="Icone Category">
+            </div>
+          </div>
+        </router-link>
+        <router-link to="/Category/sluggg">
+          <div class="ResultSearchCate">
+            <div class="ContResultCate">
+              <h2>FPS game AHH</h2>
+              <img src="Category/cards.svg" alt="Icone Category">
+            </div>
+          </div>
+        </router-link>
+        <router-link to="/Category/sluggg">
+          <div class="ResultSearchCate">
+            <div class="ContResultCate">
+              <h2>FPS game AHH</h2>
+              <img src="Category/cards.svg" alt="Icone Category">
+            </div>
+          </div>
+        </router-link>
+        <router-link to="/Category/sluggg">
+          <div class="ResultSearchCate">
+            <div class="ContResultCate">
+              <h2>FPS game AHH</h2>
+              <img src="Category/tabler_viewfinder.svg" alt="Icone Category">
+            </div>
+          </div>
+        </router-link>
+      </div>
     </div>
 
-    <div v-if="selectedSegment === 'Game'">
+    <div v-if="selectedSegment === 'Game'" class="SearchContent">
       <ion-searchbar placeholder="Search your Game"></ion-searchbar>
-      <p>Contenu du segment</p>
+      <p class="CountResult">6 results found</p>
+      <div class="AllResult">
+        <router-link to="/Games/sluggg">
+          <div class="ResultSearchGame">
+            <div class="ContResultGame">
+              <h2>FPS gamqzdqdddddddddddddddddddddddz</h2>
+            </div>
+          </div>
+        </router-link>
+        <router-link to="/Games/sluggg">
+          <div class="ResultSearchGame">
+            <div class="ContResultGame">
+              <h2>FPS game AHH</h2>
+            </div>
+          </div>
+        </router-link>
+        <router-link to="/Games/sluggg">
+          <div class="ResultSearchGame">
+            <div class="ContResultGame">
+              <h2>FPS game AHH</h2>
+            </div>
+          </div>
+        </router-link>
+        <router-link to="/Games/sluggg">
+          <div class="ResultSearchGame">
+            <div class="ContResultGame">
+              <h2>FPS game AHH</h2>
+            </div>
+          </div>
+        </router-link>
+        <router-link to="/Games/sluggg">
+          <div class="ResultSearchGame">
+            <div class="ContResultGame">
+              <h2>FPS game AHH</h2>
+            </div>
+          </div>
+        </router-link>
+      </div>
     </div>
 
     </ion-content>
@@ -211,5 +290,99 @@ ion-menu.NavMenu::part(container) {
   text-align: center;
   font-size: 18px;
   padding: 0px 10%;
+}
+
+.IonModalS ion-toolbar{
+  --background: #242252;
+}
+.IonModalS ion-content{
+  --background: #242252;
+}
+.TitleModalS{
+  font-family: var(--font-gugi);
+  font-size: 18px;
+  color: #9987FF;
+}
+.CloseModalS{
+  --color: #9987FF;
+}
+.ContModalS ion-segment {
+  margin: 15px 0px;
+}
+.ContModalS ion-segment-button {
+  font-family: var(--font-gugi);
+  --color-checked: #fff;
+  --indicator-color: #6459A2;
+}
+.SearchContent ion-searchbar{
+  font-family: var(--font-gugi);
+  font-size: 10px;
+  --color: #fff;
+}
+.CountResult{
+  font-family: var(--font-gugi);
+  font-size: 16px;
+}
+.AllResult{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 568px) {
+  .AllResult{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.ResultSearchGame{
+  width: 140px;
+  height: 150px;
+  background-image: url('https://loremflickr.com/320/240');
+  border-radius: 20px;
+  margin: 13px;
+}
+.ContResultGame{
+  background: linear-gradient(180deg, rgba(36, 33, 49, 0.5) 0%, rgba(36, 33, 49, 0.5) 49.42%, #242131 70.55%);  
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding: 0px 20px;
+}
+.ContResultGame h2{
+  font-family: var(--font-gugi);
+  font-size: 12px;
+  text-align: center;
+  color: #FFFFFF;
+  width: 100%;
+}
+
+.ResultSearchCate{
+  width: 140px;
+  height: 150px;
+  background-color: #2F2B45;
+  border-radius: 20px;
+  margin: 13px;
+}
+.ContResultCate{
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 20px;
+}
+.ContResultCate img{
+  position: relative;
+}
+.ContResultCate {
+  overflow: hidden;
+}
+.ContResultCate h2{
+  font-family: var(--font-gugi);
+  font-size: 12px;
+  text-align: center;
+  color: #FFFFFF;
+  width: 100%;
 }
 </style>

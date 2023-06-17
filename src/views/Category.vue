@@ -79,6 +79,7 @@ import { IonContent, IonPage } from '@ionic/vue';
   display: flex;
   justify-content: center;
   align-items: end;
+  padding: 0px 20px;
 }
 .ContGame h2{
   font-family: var(--font-gugi);
