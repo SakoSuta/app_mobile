@@ -40,18 +40,50 @@
             </form>
           </div>
         </div>
-        <router-link to="/Login" class="LogoutButton">Logout</router-link>
+        <router-link to="/Login" class="LogoutButton" @click="presentLogoutAlert">Logout</router-link>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
-<script setup lang="ts">
-import { IonContent, IonPage } from "@ionic/vue";
-
+<script lang="ts">
+import { IonContent, IonPage, alertController } from "@ionic/vue";
 import { ref } from 'vue'
+import { defineComponent } from "vue";
 
-const EditON = ref(true)
+export default defineComponent({
+  setup() {
+    const presentLogoutAlert = async () => {
+      const alert = await alertController.create({
+        header: 'Logout',
+        message: 'Are you sure you want to logout?',
+        buttons: [
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            cssClass: 'secondary',
+          },
+          {
+            text: 'Logout',
+            handler: () => {
+              localStorage.removeItem("token");
+              window.location.href = '/home';
+            },
+          },
+        ],
+      });
+
+      await alert.present();
+    };
+
+    return { presentLogoutAlert };
+  },
+  data() {
+    return {
+      EditON: ref(true),
+    };
+  },
+});
 </script>
 
 <style>

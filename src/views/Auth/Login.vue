@@ -6,22 +6,61 @@
         <img src="Icone/Go_Back.svg" alt="Return button" />
       </div>
       <div class="FormuLogin">
-        <form action="" class="formL">
+        <form class="formL">
           <h1 class="titleL">Login</h1>
-          <input type="email" placeholder="Email" class="inputL" />
-          <input type="password" placeholder="Password" class="inputL" />
-          <router-link to="/register" class="aL"
-            >Not registered yet?</router-link
-          >
-          <button class="buttonL">Connect</button>
+          <input type="email" placeholder="Email" class="inputL" ref="email" />
+          <input type="password" placeholder="Password" class="inputL" ref="password" />
+          <router-link to="/register" class="aL">Not registered yet?</router-link>
+          <button @click.prevent="LoginSubmit" class="buttonL">Connect</button>
         </form>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
-<script setup lang="ts">
-import { IonContent, IonPage } from "@ionic/vue";
+<script lang="ts">
+import { IonContent, IonPage, toastController } from "@ionic/vue";
+import { ref } from 'vue';
+import axios from 'axios';
+
+export default {
+  methods: {
+    async LoginSubmit() {
+      try {
+        const email = this.$refs.email.value;
+        const password = this.$refs.password.value;
+
+        const response = await axios.post('http://localhost:3000/api/auth/login', {
+          email,
+          password,
+        });
+
+        if (response.status === 200) {
+          // Connexion réussie
+          const responseData = response.data;
+          console.log(responseData);
+          const token = responseData.token;
+          localStorage.setItem("token", token);
+          this.$router.push('/home');
+        }
+      } catch (error) {
+          if (error.response && error.response.status === 401){
+            // Connexion échouée
+            this.presentToast('Password or email incorrect');
+          }
+      }
+    },
+    async presentToast(message) {
+        const toast = await toastController.create({
+          message: message,
+          duration: 1500,
+          position: 'top',
+        });
+
+        await toast.present();
+      },
+  },
+};
 </script>
 
 <style>

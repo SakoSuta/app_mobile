@@ -1,8 +1,11 @@
 <template>
   <ion-menu contentId="main-content" class="NavMenu">
-    <ion-header class="IntroMenu">
+    <ion-header class="IntroMenu" v-if="LoginUser">
       <img src="https://loremflickr.com/320/240" alt="Profile Picture" />
       <p>Hi, User</p>
+    </ion-header>
+    <ion-header class="IntroMenu" v-else>
+      <router-link to="/login" class="LoginMenu">Login</router-link>
     </ion-header>
     <ion-content>
       <div class="ContMenu">
@@ -10,7 +13,11 @@
           <img src="Icone/Home.svg" alt="Icon" />
           <span>Home</span>
         </router-link>
-        <router-link to="/users/dqz45" class="ItemMenu">
+        <router-link to="/users/dqz45" class="ItemMenu" v-if="LoginUser">
+          <img src="Icone/User.svg" alt="Icon" />
+          <span>Account</span>
+        </router-link>
+        <router-link to="/login" class="ItemMenu" v-else>
           <img src="Icone/User.svg" alt="Icon" />
           <span>Account</span>
         </router-link>
@@ -22,7 +29,7 @@
           <img src="Icone/Mail.svg" alt="Icon" />
           <span>Contact Us</span>
         </router-link>
-        <router-link to="/" class="ItemMenu">
+        <router-link to="/" class="ItemMenu" @click="presentLogoutAlert">
           <img src="Icone/Logout.svg" alt="Icon" />
           <span>Logout</span>
         </router-link>
@@ -146,7 +153,9 @@
           <img src="Icone/Menu.svg" alt="Menu" />
         </ion-menu-button>
       </ion-buttons>
-      <router-link to="/"><img :src="logo" alt="Logo" /></router-link>
+      <router-link to="/">
+        <img :src="logo" alt="Logo" />
+      </router-link>
       <ion-buttons id="open-modal"><img src="Icone\search.svg" alt="Search" /></ion-buttons>
     </div>
   </ion-header>
@@ -171,6 +180,7 @@
     IonMenuButton,
     IonSegment,
     IonSegmentButton,
+    alertController,
   } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
@@ -219,14 +229,47 @@
           backgroundColor: this.backgroundColor || "#242252",
         };
       },
+      LoginUser() {
+        return !!localStorage.getItem("token");
+      },
     },
     methods: {
       dismiss() {
         this.$refs.modal.$el.dismiss();
-      },
+      }, 
+      // reloadContent() {
+      // // Mettez à jour vos données ou effectuez d'autres actions pour recharger le contenu
+      //   console.log("Contenu rechargé avec succès !");
+      // },
     },
     mounted() {
       this.presentingElement = this.$refs.page.$el;
+      },
+    setup() {
+      const presentLogoutAlert = async () => {
+        const alert = await alertController.create({
+          header: 'Logout',
+          message: 'Are you sure you want to logout?',
+          buttons: [
+            {
+              text: 'Cancel',
+              role: 'cancel',
+              cssClass: 'secondary',
+            },
+            {
+              text: 'Logout',
+              handler: () => {
+                localStorage.removeItem("token");
+                window.location.href = '/home';
+              },
+            },
+          ],
+        });
+
+        await alert.present();
+      };
+
+      return { presentLogoutAlert };
     },
   });
 </script>
@@ -290,6 +333,19 @@ ion-menu.NavMenu::part(container) {
   text-align: center;
   font-size: 18px;
   padding: 0px 10%;
+}
+.LoginMenu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #9987FF;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: var(--font-gugi);
+  font-size: 18px;
 }
 
 .IonModalS ion-toolbar{

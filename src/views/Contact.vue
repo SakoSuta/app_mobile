@@ -1,6 +1,6 @@
 <template>
   <ion-page>
-    <Nav :background-color="'#242131'"></Nav>
+    <!-- <Nav :background-color="'#242131'"></Nav> -->
     <ion-content>
       <div class="contactUs">
         <div class="Go_Back" onclick="history.back()">
@@ -9,16 +9,15 @@
         <div class="ContentCont">
           <div class="ContCont">
             <h1 class="titleCont">Contact us</h1>
-            <form action="" class="formCont">
-              <input type="text" placeholder="Name" class="inputCont" />
-              <input type="email" placeholder="Email" class="inputCont" />
+            <form class="formCont" @submit="ContactPlanet">
+              <input type="text" placeholder="Name" class="inputCont" ref="name" />
+              <input type="email" placeholder="Email" class="inputCont" ref="email" />
               <textarea
-                name=""
-                id=""
                 cols="30"
                 rows="10"
                 placeholder="Message"
                 class="textaCont"
+                ref="message"
               ></textarea>
               <button class="buttonSend">Sending</button>
             </form>
@@ -86,8 +85,61 @@
   </ion-page>
 </template>
 
-<script setup lang="ts">
-import { IonContent, IonPage, IonCard, IonCardHeader, IonIcon, IonCardContent } from "@ionic/vue";
+<script lang="ts">
+import { IonContent, IonPage, IonCard, IonCardHeader, IonIcon, IonCardContent, toastController } from "@ionic/vue";
+import axios from 'axios';
+
+export default {
+  components: {
+    IonContent,
+    IonPage,
+    IonCard,
+    IonCardHeader,
+    IonIcon,
+    IonCardContent,
+  },
+  methods: {
+    async ContactPlanet(event: Event) {
+      event.preventDefault();
+      try {
+        const name = this.$refs.name.value;
+        const email = this.$refs.email.value;
+        const message = this.$refs.message.value;
+        const subject = "Contact from the website";
+
+        if(!name || !email || !message) {
+          this.presentToast('Please fill in all fields.');
+          return;
+        }
+
+        const response = await axios.post('http://localhost:3000/api/contact', {
+          name,
+          email,
+          message,
+          subject,
+        });
+
+        if (response.status === 200) {
+          // Envoi réussi
+          const responseData = response.data;
+          console.log(responseData);
+          this.presentToast('E-mail sent successfully.');
+        }
+      } catch (error) {
+        this.presentToast('Hmmm... Something went wrong, please try again later.');
+      }
+    },
+    async presentToast(message) {
+        const toast = await toastController.create({
+          message: message,
+          duration: 1500,
+          position: 'top',
+        });
+
+        await toast.present();
+      },
+  },
+};
 </script>
 
 <style>

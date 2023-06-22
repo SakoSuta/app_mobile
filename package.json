@@ -20,9 +20,10 @@
     "@ionic/core": "^7.0.12",
     "@ionic/vue": "^7.0.0",
     "@ionic/vue-router": "^7.0.0",
+    "axios": "^1.4.0",
     "ionicons": "^7.0.0",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.2.2"
   },
   "devDependencies": {
     "@capacitor/cli": "5.0.4",
