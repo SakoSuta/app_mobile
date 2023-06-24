@@ -1,23 +1,25 @@
 <template>
   <ion-page>
-    <Nav :background-color="'#242131'"></Nav>
+    <!-- <Nav :background-color="'#242131'"></Nav> -->
     <ion-content>
       <div onclick="history.back()" class="Go_Back">
         <img src="Icone/Go_Back.svg" alt="Return button" />
       </div>
       <div class="AllContUser">
-        <h1 class="titleUser">Hi, User</h1>
+        <h1 class="titleUser">Hi, {{ UserData.name }}</h1>
         <div style="width: 100%;">
           <div class="CardUser" v-if="EditON">
-            <img src="https://loremflickr.com/320/240" alt="Profile Photo" class="UserPic"/>
+            <img :src="UserData.image" alt="Profile Photo" class="UserPic" v-if="UserData.image"/>
+            <img src="/image/PPDefault.png" alt="Profile Photo" class="UserPic" v-else/>
             <div class="UserInfo">
               <div class="UserName">
-                <h2>Pseudo</h2>
-                <span>User</span>
+                <h2>{{ UserData.pseudo }}</h2>
+                <span>{{ UserData.name }}</span>
               </div>
               <div class="OtherInfo">
-                <h2>EmilieMontpre@outlook.com</h2>
-                <h2>Subscriptions : none</h2>
+                <h2>{{ UserData.email }}</h2>
+                <h2 v-if="UserData.subscriptions.length > 0">Subscriptions : {{ UserData.subscriptions[0].plan[0].name }}</h2>
+                <h2 v-else>Subscriptions : none</h2>
               </div>
               <div class="ContEdit">
                 <button @click="EditON = !EditON" class="EditButton">Edit</button>
@@ -48,12 +50,16 @@
 
 <script lang="ts">
 import { IonContent, IonPage, alertController } from "@ionic/vue";
-import { ref } from 'vue'
-import { defineComponent } from "vue";
+import { ConnecteUserData } from "@/function/utils";
+import { ref } from 'vue';
 
-export default defineComponent({
-  setup() {
-    const presentLogoutAlert = async () => {
+export default {
+  components: {
+    IonContent,
+    IonPage,
+  },
+  methods: {
+    async presentLogoutAlert() {
       const alert = await alertController.create({
         header: 'Logout',
         message: 'Are you sure you want to logout?',
@@ -74,16 +80,38 @@ export default defineComponent({
       });
 
       await alert.present();
-    };
-
-    return { presentLogoutAlert };
+    },
+  },
+  async mounted() {
+    try {
+      const userData = await ConnecteUserData();
+      console.log(userData);
+      this.UserData = userData;
+    } catch (error) {
+      console.error(error);
+    }
   },
   data() {
     return {
       EditON: ref(true),
+      UserData: {
+        name: "",
+        pseudo: "",
+        email: "",
+        image: "",
+        subscriptions: [
+          {
+            plan: [
+              {
+                name: "",
+              },
+            ],
+          },
+        ],
+      },
     };
   },
-});
+};
 </script>
 
 <style>
@@ -92,7 +120,7 @@ export default defineComponent({
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 85%;
+  height: 70%;
   padding: 30px 26px;
 }
 .titleUser {

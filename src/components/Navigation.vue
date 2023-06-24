@@ -2,7 +2,7 @@
   <ion-menu contentId="main-content" class="NavMenu">
     <ion-header class="IntroMenu" v-if="LoginUser">
       <img src="https://loremflickr.com/320/240" alt="Profile Picture" />
-      <p>Hi, User</p>
+      <p>Hi, {{UserData.pseudo}}</p>
     </ion-header>
     <ion-header class="IntroMenu" v-else>
       <router-link to="/login" class="LoginMenu">Login</router-link>
@@ -13,7 +13,7 @@
           <img src="Icone/Home.svg" alt="Icon" />
           <span>Home</span>
         </router-link>
-        <router-link to="/users/dqz45" class="ItemMenu" v-if="LoginUser">
+        <router-link :to="`/users/${UserData.uuid}`" class="ItemMenu" v-if="LoginUser">
           <img src="Icone/User.svg" alt="Icon" />
           <span>Account</span>
         </router-link>
@@ -183,12 +183,17 @@
     alertController,
   } from '@ionic/vue';
   import { defineComponent } from 'vue';
+  import { ConnecteUserData } from "@/function/utils";
 
   export default defineComponent({
     data() {
       return {
         presentingElement: null,
         selectedSegment: 'Categories',
+        UserData: {
+          uuid: '',
+          pseudo: '',
+        },
       };
     },
     components: {
@@ -242,8 +247,14 @@
       //   console.log("Contenu rechargé avec succès !");
       // },
     },
-    mounted() {
-      this.presentingElement = this.$refs.page.$el;
+    async mounted() {
+      try {
+        const userData = await ConnecteUserData();
+        console.log(userData);
+        this.UserData = userData;
+      } catch (error) {
+        console.error(error);
+      }
       },
     setup() {
       const presentLogoutAlert = async () => {

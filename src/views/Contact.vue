@@ -121,15 +121,13 @@ export default {
 
         if (response.status === 200) {
           // Envoi réussi
-          const responseData = response.data;
-          console.log(responseData);
           this.presentToast('E-mail sent successfully.');
         }
       } catch (error) {
         this.presentToast('Hmmm... Something went wrong, please try again later.');
       }
     },
-    async presentToast(message) {
+    async presentToast(message: any) {
         const toast = await toastController.create({
           message: message,
           duration: 1500,
