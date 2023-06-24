@@ -86,8 +86,9 @@
 </template>
 
 <script lang="ts">
-import { IonContent, IonPage, IonCard, IonCardHeader, IonIcon, IonCardContent, toastController } from "@ionic/vue";
+import { IonContent, IonPage, IonCard, IonCardHeader, IonIcon, IonCardContent } from "@ionic/vue";
 import axios from 'axios';
+import { presentToast } from "@/function/utils";
 
 export default {
   components: {
@@ -108,7 +109,7 @@ export default {
         const subject = "Contact from the website";
 
         if(!name || !email || !message) {
-          this.presentToast('Please fill in all fields.');
+          presentToast('Please fill in all fields.');
           return;
         }
 
@@ -121,21 +122,12 @@ export default {
 
         if (response.status === 200) {
           // Envoi réussi
-          this.presentToast('E-mail sent successfully.');
+          presentToast('E-mail sent successfully.');
         }
       } catch (error) {
-        this.presentToast('Hmmm... Something went wrong, please try again later.');
+        presentToast('Hmmm... Something went wrong, please try again later.');
       }
     },
-    async presentToast(message: any) {
-        const toast = await toastController.create({
-          message: message,
-          duration: 1500,
-          position: 'top',
-        });
-
-        await toast.present();
-      },
   },
 };
 </script>

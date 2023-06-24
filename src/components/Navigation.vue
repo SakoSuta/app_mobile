@@ -180,10 +180,9 @@
     IonMenuButton,
     IonSegment,
     IonSegmentButton,
-    alertController,
   } from '@ionic/vue';
   import { defineComponent } from 'vue';
-  import { ConnecteUserData } from "@/function/utils";
+  import { ConnecteUserData, presentLogoutAlert } from "@/function/utils";
 
   export default defineComponent({
     data() {
@@ -242,6 +241,9 @@
       dismiss() {
         this.$refs.modal.$el.dismiss();
       }, 
+      async presentLogoutAlert() {
+        await presentLogoutAlert();
+      },
       // reloadContent() {
       // // Mettez à jour vos données ou effectuez d'autres actions pour recharger le contenu
       //   console.log("Contenu rechargé avec succès !");
@@ -255,33 +257,7 @@
       } catch (error) {
         console.error(error);
       }
-      },
-    setup() {
-      const presentLogoutAlert = async () => {
-        const alert = await alertController.create({
-          header: 'Logout',
-          message: 'Are you sure you want to logout?',
-          buttons: [
-            {
-              text: 'Cancel',
-              role: 'cancel',
-              cssClass: 'secondary',
-            },
-            {
-              text: 'Logout',
-              handler: () => {
-                localStorage.removeItem("token");
-                window.location.href = '/home';
-              },
-            },
-          ],
-        });
-
-        await alert.present();
-      };
-
-      return { presentLogoutAlert };
-    },
+      }
   });
 </script>
 

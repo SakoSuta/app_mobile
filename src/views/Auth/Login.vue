@@ -21,6 +21,7 @@
 <script lang="ts">
 import { IonContent, IonPage, toastController } from "@ionic/vue";
 import { ref } from 'vue';
+import { presentToast } from "@/function/utils";
 import axios from 'axios';
 
 export default {
@@ -38,27 +39,24 @@ export default {
         if (response.status === 200) {
           // Connexion réussie
           const responseData = response.data;
-          console.log(responseData);
           const token = responseData.token;
           localStorage.setItem("token", token);
           this.$router.push('/home');
         }
+        
       } catch (error) {
+        const email = this.$refs.email.value;
+        const password = this.$refs.password.value;
+        if(!email || !password) {
+          presentToast('Please fill in all fields.');
+          return;
+        }
           if (error.response && error.response.status === 401){
             // Connexion échouée
-            this.presentToast('Password or email incorrect');
+            presentToast('Password or email incorrect');
           }
       }
     },
-    async presentToast(message) {
-        const toast = await toastController.create({
-          message: message,
-          duration: 1500,
-          position: 'top',
-        });
-
-        await toast.present();
-      },
   },
 };
 </script>

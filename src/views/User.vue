@@ -32,12 +32,12 @@
               <router-link to="/Login" class="EditPict"><img src="Icone/Edit.svg" alt="Edit icone"></router-link>
             </div>
             <form action="" class="EditForm">
-              <input type="text" placeholder="Name">
-              <input type="text" placeholder="Pseudo">
-              <input type="text" placeholder="Email">
+              <input type="text" placeholder="Name" :value="UserData.name" ref="name">
+              <input type="text" placeholder="Pseudo" :value="UserData.pseudo" ref="pseudo">
+              <input type="email" placeholder="Email" :value="UserData.email" ref="email">
               <div class="ContEditF">
                 <button @click="EditON = !EditON" class="CancelButton">Cancel</button>
-                <button type="submit" class="EditButton">Edit</button>
+                <button type="submit" class="EditButton" @click="EditUser">Edit</button>
               </div>
             </form>
           </div>
@@ -49,8 +49,9 @@
 </template>
 
 <script lang="ts">
-import { IonContent, IonPage, alertController } from "@ionic/vue";
-import { ConnecteUserData } from "@/function/utils";
+import { IonContent, IonPage } from "@ionic/vue";
+import { ConnecteUserData, presentLogoutAlert } from "@/function/utils";
+import axios from "axios";
 import { ref } from 'vue';
 
 export default {
@@ -60,26 +61,36 @@ export default {
   },
   methods: {
     async presentLogoutAlert() {
-      const alert = await alertController.create({
-        header: 'Logout',
-        message: 'Are you sure you want to logout?',
-        buttons: [
-          {
-            text: 'Cancel',
-            role: 'cancel',
-            cssClass: 'secondary',
-          },
-          {
-            text: 'Logout',
-            handler: () => {
-              localStorage.removeItem("token");
-              window.location.href = '/home';
-            },
-          },
-        ],
-      });
+      await presentLogoutAlert();
+    },
+    async EditUser(event: Event) {
+      event.preventDefault();
 
-      await alert.present();
+      try {
+        
+        const nameValue = this.$refs.name.value;
+        const pseudoValue = this.$refs.pseudo.value;
+        const emailValue = this.$refs.email.value;
+
+        const response = await axios.put(
+          `http://localhost:3000/api/auth/update/${this.$route.params.uuid}`,
+          {
+            name: nameValue,
+            pseudo: pseudoValue,
+            email: emailValue,
+            // image: null,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
+        window.location.reload();
+        console.log(this.$route.params.uuid);
+      } catch (error) {
+        console.error(error);
+      }
     },
   },
   async mounted() {
