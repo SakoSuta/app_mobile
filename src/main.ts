@@ -22,10 +22,11 @@ import '@ionic/vue/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-// import './theme/MyVariables.scss';
+import './theme/MyVariables.css';
 
 import Navigation from './components/Navigation.vue';
 import OtherNavigation from './components/OtherNavigation.vue';
+import Footer from './components/Footer.vue';
 
 const app = createApp(App)
   .use(IonicVue)
@@ -33,6 +34,7 @@ const app = createApp(App)
 
   app.component('Nav', Navigation);
   app.component('NavAuth', OtherNavigation);
+  app.component('Foot', Footer);
   
 router.isReady().then(() => {
   app.mount('#app');

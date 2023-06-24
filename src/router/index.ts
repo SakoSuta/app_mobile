@@ -11,6 +11,9 @@ import PostBySlugPage from '../views/PostBySlug.vue';
 import CategoryPage from '../views/Category.vue';
 import GamesPage from '../views/Games.vue';
 import UserPage from '../views/User.vue';
+import LegalNPage from '../views/legal/Legal_Notice.vue';
+import TermsServPage from '../views/legal/Terms_Of_Service.vue';
+import TermsSalPage from '../views/legal/Terms_Of_Sales.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -64,6 +67,21 @@ const router = createRouter({
       name: 'Users',
       component: UserPage
     },
+    {
+      path: '/Legal_Notice',
+      name: 'LegalNotice',
+      component: LegalNPage
+    },
+    {
+      path: '/Terms_Of_Service',
+      name: 'TermsOfService',
+      component: TermsServPage
+    },
+    {
+      path: '/Terms_Of_Sales',
+      name: 'TermsOfUse',
+      component: TermsSalPage
+    }
   ]
 });
 
