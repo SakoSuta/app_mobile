@@ -254,14 +254,14 @@
       // },
     },
     async mounted() {
-      try {
-        const userData = await ConnecteUserData();
-        console.log(userData);
+      const userData = await ConnecteUserData();
+      if (userData){
         this.UserData = userData;
-      } catch (error) {
-        console.error(error);
       }
+      else {
+        window.location.href = "/login";
       }
+    },
   });
 </script>
 

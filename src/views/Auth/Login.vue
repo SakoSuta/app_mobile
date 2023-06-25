@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts">
-import { IonContent, IonPage, toastController } from "@ionic/vue";
+import { IonContent, IonPage } from "@ionic/vue";
 import { ref } from 'vue';
 import { presentToast } from "@/function/utils";
 import axios from 'axios';
@@ -57,6 +57,11 @@ export default {
           }
       }
     },
+  },
+  mounted() {
+    if (localStorage.getItem("token")) {
+      this.$router.push('/home');
+    }
   },
 };
 </script>

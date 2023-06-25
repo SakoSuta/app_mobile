@@ -1,37 +1,27 @@
 import axios from 'axios';
 import { toastController, alertController } from "@ionic/vue";
 
-    // export default {
-    //   async mounted() {
-    //     const token = localStorage.getItem('token');
+    export async function ConnecteUserData() {
+      const token = localStorage.getItem('token');
 
-    //     if (token) {
-    //       const UserConnected = this.ConnecteUserData();
-    //       if (UserConnected) {
-    //         // Le token est valide
-    //         return true;
-    //       } else {
-    //         // Le token n'est pas valide
-    //         return false;
-    //       }
-    //     }
-    //   }
-    // }
-
-    async function ConnecteUserData() {
+      if (token) {
         try {
-            const response = await axios.get('http://localhost:3000/api/auth/me', {
-                headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`,
-                },
-            });
-            return response.data;
-        } catch (error) {
-            console.error(error);
+          const response = await axios.get('http://localhost:3000/api/auth/me', {
+              headers: {
+                  Authorization: `Bearer ${token}`,
+              },
+          });
+          return response.data;
+        } catch (error: any) {
+          if (error.response) {
+            // Le token est expiré ou invalide
+            localStorage.removeItem("token");
+          }
         }
+      }
     }
 
-    async function presentToast(message: any) {
+    export async function presentToast(message: any) {
         const toast = await toastController.create({
             message: message,
             duration: 1500,
@@ -41,7 +31,7 @@ import { toastController, alertController } from "@ionic/vue";
           await toast.present();
     }
 
-    async function presentLogoutAlert() {
+    export async function presentLogoutAlert() {
         const alert = await alertController.create({
             header: 'Logout',
             message: 'Are you sure you want to logout?',
@@ -63,9 +53,3 @@ import { toastController, alertController } from "@ionic/vue";
     
           await alert.present();
     }
-  
-    export {
-      ConnecteUserData,
-      presentToast,
-      presentLogoutAlert
-    };
