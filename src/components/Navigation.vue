@@ -1,7 +1,8 @@
 <template>
   <ion-menu contentId="main-content" class="NavMenu">
     <ion-header class="IntroMenu" v-if="LoginUser">
-      <img src="https://loremflickr.com/320/240" alt="Profile Picture" />
+      <img :src="UserData.image" alt="Profile Photo" v-if="UserData.image"/>
+      <img src="/image/PPDefault.png" alt="Profile Photo" v-else/>
       <p>Hi, {{UserData.pseudo}}</p>
     </ion-header>
     <ion-header class="IntroMenu" v-else>
@@ -215,6 +216,7 @@
         UserData: {
           uuid: '',
           pseudo: '',
+          image: '',
         },
       };
     },
