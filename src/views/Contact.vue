@@ -1,6 +1,6 @@
 <template>
   <ion-page>
-    <!-- <Nav :background-color="'#242131'"></Nav> -->
+    <Nav :background-color="'#242131'"></Nav>
     <ion-content>
       <div class="contactUs">
         <div class="Go_Back" onclick="history.back()">
@@ -29,11 +29,7 @@
         <ion-card class="CardCont">
           <ion-card-header>
             <div class="ContIconCont">
-              <ion-icon
-                name="mail-outline"
-                class="iconCont"
-                color="primary"
-              ></ion-icon>
+              <img src="/Icone/MailW.svg" alt="Icone">
             </div>
           </ion-card-header>
 
@@ -45,11 +41,7 @@
         <ion-card class="CardCont">
           <ion-card-header>
             <div class="ContIconCont">
-              <ion-icon
-                name="call-outline"
-                class="iconCont"
-                color="primary"
-              ></ion-icon>
+              <img src="/Icone/Phone.svg" alt="Icone">
             </div>
           </ion-card-header>
 
@@ -61,7 +53,7 @@
         <ion-card class="CardCont">
           <ion-card-header>
             <div class="ContIconCont">
-              <ion-icon name="map-outline" class="iconCont"></ion-icon>
+              <img src="/Icone/Maps.svg" alt="Icone">
             </div>
           </ion-card-header>
 
