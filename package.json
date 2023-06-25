@@ -20,8 +20,10 @@
     "@ionic/core": "^7.0.12",
     "@ionic/vue": "^7.0.0",
     "@ionic/vue-router": "^7.0.0",
+    "@stripe/stripe-js": "^1.54.1",
     "axios": "^1.4.0",
     "ionicons": "^7.0.0",
+    "stripe": "^12.10.0",
     "vue": "^3.2.45",
     "vue-router": "^4.2.2"
   },

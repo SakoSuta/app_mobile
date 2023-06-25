@@ -14,6 +14,7 @@ import UserPage from '../views/User.vue';
 import LegalNPage from '../views/legal/Legal_Notice.vue';
 import TermsServPage from '../views/legal/Terms_Of_Service.vue';
 import TermsSalPage from '../views/legal/Terms_Of_Sales.vue';
+import SubscriptionPage from '../views/Subscriptions.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -41,6 +42,11 @@ const router = createRouter({
       path: '/contact',
       name: 'Contact',
       component: ContactPage
+    },
+    {
+      path: '/subscription',
+      name: 'Subscription',
+      component: SubscriptionPage
     },
     {
       path: '/posts',

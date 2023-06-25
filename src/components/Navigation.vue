@@ -21,6 +21,10 @@
           <img src="Icone/User.svg" alt="Icon" />
           <span>Account</span>
         </router-link>
+        <router-link to="/subscription" class="ItemMenu">
+          <img src="Icone/Subscription.svg" alt="Icon" />
+          <span>Subscriptions</span>
+        </router-link>
         <router-link to="/posts" class="ItemMenu">
           <img src="Icone/News.svg" alt="Icon" />
           <span>All News</span>
@@ -185,16 +189,6 @@
   import { ConnecteUserData, presentLogoutAlert } from "@/function/utils";
 
   export default defineComponent({
-    data() {
-      return {
-        presentingElement: null,
-        selectedSegment: 'Categories',
-        UserData: {
-          uuid: '',
-          pseudo: '',
-        },
-      };
-    },
     components: {
       IonButtons,
       IonButton,
@@ -213,6 +207,16 @@
       IonMenuButton,
       IonSegment,
       IonSegmentButton,
+    },
+    data() {
+      return {
+        presentingElement: null,
+        selectedSegment: 'Categories',
+        UserData: {
+          uuid: '',
+          pseudo: '',
+        },
+      };
     },
     props: {
       logoPath: {

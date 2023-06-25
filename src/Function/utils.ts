@@ -1,7 +1,24 @@
 import axios from 'axios';
 import { toastController, alertController } from "@ionic/vue";
 
-    export async function ConnecteUserData() {
+    // export default {
+    //   async mounted() {
+    //     const token = localStorage.getItem('token');
+
+    //     if (token) {
+    //       const UserConnected = this.ConnecteUserData();
+    //       if (UserConnected) {
+    //         // Le token est valide
+    //         return true;
+    //       } else {
+    //         // Le token n'est pas valide
+    //         return false;
+    //       }
+    //     }
+    //   }
+    // }
+
+    async function ConnecteUserData() {
         try {
             const response = await axios.get('http://localhost:3000/api/auth/me', {
                 headers: {
@@ -14,7 +31,7 @@ import { toastController, alertController } from "@ionic/vue";
         }
     }
 
-    export async function presentToast(message: any) {
+    async function presentToast(message: any) {
         const toast = await toastController.create({
             message: message,
             duration: 1500,
@@ -24,7 +41,7 @@ import { toastController, alertController } from "@ionic/vue";
           await toast.present();
     }
 
-    export async function presentLogoutAlert() {
+    async function presentLogoutAlert() {
         const alert = await alertController.create({
             header: 'Logout',
             message: 'Are you sure you want to logout?',
@@ -46,3 +63,9 @@ import { toastController, alertController } from "@ionic/vue";
     
           await alert.present();
     }
+  
+    export {
+      ConnecteUserData,
+      presentToast,
+      presentLogoutAlert
+    };
