@@ -6,39 +6,60 @@
         <img src="Icone/Go_Back.svg" alt="Return button" />
       </router-link>
       <div class="ImgPost">
-        <img src="https://loremflickr.com/320/240" alt="Image du posts" />
+        <img :src="Games.image" alt="Image du posts" />
         <div class="Download">
           <span>Download PC only</span>
         </div>
       </div>
       <div class="titleGames">
-        <h1>Hogwarts Legacy : L'Héritage de Poudlard</h1>
+        <h1>{{Games.name}}</h1>
       </div>
       <div class="InfoPlus">
-        <h2>DEVELOPPEMENT : Avalanche Software</h2>
-        <h2>EDITION: Warner Bros. Games</h2>
-        <p>Date OF PUBLICATION : 10/02/2023</p>
+        <h2>DEVELOPPEMENT : {{Games.developpement}}</h2>
+        <h2>EDITION: {{Games.edition}}</h2>
+        <p>Date OF PUBLICATION : {{Games.date}}</p>
       </div>
       <div class="ContGames">
-        <h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at
-          assumenda, quos doloremque cupiditate molestiae eligendi consequuntur
-          repudiandae, ab nihil autem rerum nam similique? Ratione magni
-          voluptatibus explicabo quisquam ipsam! Lorem ipsum dolor sit, amet
-          consectetur adipisicing elit. Nemo pariatur veniam dolor, asperiores,
-          qui rem consectetur amet ipsa ab, quae labore at provident expedita
-          eius et deleniti corporis error unde. Lorem ipsum, dolor sit amet
-          consectetur adipisicing elit. Quas, perferendis! Inventore accusamus
-          magni repudiandae, iure sunt expedita repellat optio, sequi cum culpa,
-          tempore velit asperiores adipisci nesciunt? Dignissimos, possimus in.
-        </h3>
+        <h3>{{Games.description}}</h3>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 import { IonContent, IonPage } from "@ionic/vue";
+import { parseISO, format } from 'date-fns';
+import axios from 'axios';
+
+export default {
+  components: {
+    IonContent,
+    IonPage,
+  },
+  async mounted() {
+      const response = await axios.get(`http://localhost:3000/api/games/${this.$route.params.slug}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      this.Games = response.data;
+      const dateOnly = format(parseISO(response.data.dateSortie), 'dd/MM/yyyy');
+      this.Games.date = dateOnly;
+  },
+  data() {
+    return {
+      Games: {
+        name: "",
+        image: "",
+        date: "",
+        developpement: "",
+        edition: "",
+        description:"",
+      },
+    };
+  },
+};
+
 </script>
 
 <style>
