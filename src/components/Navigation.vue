@@ -261,7 +261,7 @@
         this.UserData = userData;
       }
       else {
-        window.location.href = "/login";
+        this.LoginUser = false;
       }
     },
   });
