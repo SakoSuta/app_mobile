@@ -5,41 +5,15 @@
       <div class="AllContPost">
         <h1 class="titlePost">Actuality</h1>
         <div class="AllCardPosts">
-          <router-link to="/posts/sluug">
+          <router-link v-for="Post in Posts" :to="`/posts/${Post.slug}`">
             <ion-card class="CardPost">
               <div class="ContCardPost">
                 <ion-card-header>
-                  <h2>Titre hyper mega cool de tous les temps et de tous les univers interstellaire</h2>
+                  <h2>{{Post.title}}</h2>
                 </ion-card-header>
                 <ion-card-content>
-                  <p>Publish at 20/07/2023</p>
-                  <p>By Emilie Montpre</p>
-                </ion-card-content>
-              </div>
-            </ion-card>
-          </router-link>
-          <router-link to="/posts/sluug">
-            <ion-card class="CardPost">
-              <div class="ContCardPost">
-                <ion-card-header>
-                  <h2>Titre hyper mega cool de tous les temps et de tous les univers interstellaire</h2>
-                </ion-card-header>
-                <ion-card-content>
-                  <p>Publish at 20/07/2023</p>
-                  <p>By Emilie Montpre</p>
-                </ion-card-content>
-              </div>
-            </ion-card>
-          </router-link>
-          <router-link to="/posts/sluug">
-            <ion-card class="CardPost">
-              <div class="ContCardPost">
-                <ion-card-header>
-                  <h2>Titre hyper mega cool de tous les temps et de tous les univers interstellaire</h2>
-                </ion-card-header>
-                <ion-card-content>
-                  <p>Publish at 20/07/2023</p>
-                  <p>By Emilie Montpre</p>
+                  <p>Publish at {{Post.publishedAt}}</p>
+                  <p>By {{Post.author.pseudo}} alias {{ Post.author.name }}</p>
                 </ion-card-content>
               </div>
             </ion-card>
@@ -50,8 +24,46 @@
   </ion-page>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 import { IonContent, IonPage, IonCard, IonCardHeader, IonCardContent} from '@ionic/vue';
+import { parseISO, format } from 'date-fns';
+import axios from 'axios';
+
+export default {
+  components: {
+    IonContent,
+    IonPage,
+    IonCard,
+    IonCardHeader,
+    IonCardContent
+  },
+  async mounted() {
+    const response = await axios.get('http://localhost:3000/api/posts');
+    const allPosts = response.data;
+    this.Posts = allPosts
+        .filter(post => post.Actif === true)
+        .map(post => {
+          return {
+            id: post.id,
+            title: post.title,
+            publishedAt: this.formatDate(post.publishedAt),
+            author: post.author,
+            slug: post.slug
+          };
+        });
+  },
+  methods: {
+    formatDate(dateString : any) {
+      const date = format(parseISO(dateString), 'dd/MM/yyyy');
+      return date;
+    }
+  },
+  data() {
+    return {
+      Posts: [],
+    };
+  },
+};
 </script>
 
 <style>
