@@ -3,26 +3,12 @@
     <Nav :background-color="'#24223E'"></Nav>
     <ion-content>
       <div class="AllContCate">
-        <h1 class="titleCate">FPS Game</h1>
+        <h1 class="titleCate">{{Category.name}} Games</h1>
         <div class="AllGameCate">
-          <router-link to="/Games/sluggg">
+          <router-link v-for="game in Category.games" :to="`/Games/${game.slug}`">
             <div class="Game">
               <div class="ContGame">
-                <h2>FPS gamqzdqdddddddddddddddddddddddz</h2>
-              </div>
-            </div>
-          </router-link>
-          <router-link to="/Games/sluggg">
-            <div class="Game">
-              <div class="ContGame">
-                <h2>FPS game AHH</h2>
-              </div>
-            </div>
-          </router-link>
-          <router-link to="/Games/sluggg">
-            <div class="Game">
-              <div class="ContGame">
-                <h2>FPS game AHH</h2>
+                <h2>{{game.name}}</h2>
               </div>
             </div>
           </router-link>
@@ -32,8 +18,34 @@
   </ion-page>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 import { IonContent, IonPage } from '@ionic/vue';
+import axios from 'axios';
+
+export default {
+  components: {
+    IonContent,
+    IonPage,
+  },
+  async mounted() {
+    const response = await axios.get(`http://localhost:3000/api/categories/${this.$route.params.slug}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      this.Category = response.data;
+      console.log(this.Category);
+  },
+  data() {
+    return {
+      Category: {
+        name: "",
+        image: "",
+        games: [],
+      },
+    };
+  },
+};
 </script>
 
 <style>

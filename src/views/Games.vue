@@ -2,9 +2,9 @@
   <ion-page>
     <Nav :background-color="'#24223E'"></Nav>
     <ion-content>
-      <router-link to="/Category/sluggg" class="Go_BackBS">
+      <div onclick="history.back()" class="Go_BackBS">
         <img src="Icone/Go_Back.svg" alt="Return button" />
-      </router-link>
+      </div>
       <div class="ImgPost">
         <img :src="Games.image" alt="Image du posts" />
         <div class="Download">
