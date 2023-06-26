@@ -28,11 +28,7 @@ export default {
     IonPage,
   },
   async mounted() {
-    const response = await axios.get(`http://localhost:3000/api/categories/${this.$route.params.slug}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+    const response = await axios.get(`http://localhost:3000/api/categories/${this.$route.params.slug}`);
       this.Category = response.data;
       console.log(this.Category);
   },

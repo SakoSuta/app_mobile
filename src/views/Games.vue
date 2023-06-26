@@ -37,11 +37,7 @@ export default {
     IonPage,
   },
   async mounted() {
-      const response = await axios.get(`http://localhost:3000/api/games/${this.$route.params.slug}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const response = await axios.get(`http://localhost:3000/api/games/${this.$route.params.slug}`);
       this.Games = response.data;
       const dateOnly = format(parseISO(response.data.dateSortie), 'dd/MM/yyyy');
       this.Games.date = dateOnly;
