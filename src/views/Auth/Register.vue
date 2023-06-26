@@ -6,23 +6,77 @@
         <img src="Icone/Go_Back.svg" alt="Return button" />
       </div>
       <div class="FormuRegister">
-        <form action="" class="formR">
+        <form class="formR">
           <h1 class="titleR">Register</h1>
-          <input type="text" placeholder="Pseudo" class="inputR" />
-          <input type="email" placeholder="Email" class="inputR" />
-          <input type="password" placeholder="Password" class="inputR" />
-          <router-link to="/login" class="aR"
-            >You already have an account ?</router-link
-          >
-          <button class="buttonR">Register</button>
+          <input type="text" placeholder="Name" class="inputR" ref="name"/>
+          <input type="text" placeholder="Pseudo" class="inputR" ref="pseudo"/>
+          <input type="email" placeholder="Email" class="inputR" ref="email"/>
+          <input type="password" placeholder="Password" class="inputR" ref="password"/>
+          <router-link to="/login" class="aR">You already have an account ?</router-link>
+          <button class="buttonR" @click="RegisterSubmit">Register</button>
         </form>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 import { IonContent, IonPage } from "@ionic/vue";
+import { presentToast } from "@/function/utils";
+import axios from 'axios';
+
+export default {
+  components: {
+    IonContent,
+    IonPage,
+  },
+  methods: {
+    async RegisterSubmit() {
+      try {
+        const name = this.$refs.name.value;
+        const pseudo = this.$refs.pseudo.value;
+        const email = this.$refs.email.value;
+        const password = this.$refs.password.value;
+
+        const response = await axios.post('http://localhost:3000/api/auth/register', {
+          name,
+          pseudo,
+          email,
+          password,
+        });
+        console.log(response);
+
+        if (response.status === 201) {
+          // Inscription réussie
+          const responseData = response.data;
+          const token = responseData.token;
+          localStorage.setItem("token", token);
+          this.$router.push('/home');
+        }
+        
+      } catch (error) {
+        const name = this.$refs.name.value;
+        const pseudo = this.$refs.pseudo.value;
+        const email = this.$refs.email.value;
+        const password = this.$refs.password.value;
+        if(!email || !password || !name || !pseudo) {
+          presentToast('Please fill in all fields.');
+          return;
+        }
+          if (error.response && error.response.status === 409){
+            // Inscription échouée
+            presentToast('Email already used');
+          }
+      }
+    },
+  },
+  mounted() {
+    if (localStorage.getItem("token")) {
+      this.$router.push('/home');
+    }
+  },
+
+};
 </script>
 
 <style>
