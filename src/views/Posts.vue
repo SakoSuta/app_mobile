@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { IonContent, IonPage, IonCard, IonCardHeader, IonCardContent} from '@ionic/vue';
-import { parseISO, format } from 'date-fns';
+import { formatDate } from "@/function/utils";
 import axios from 'axios';
 
 export default {
@@ -40,23 +40,19 @@ export default {
   async mounted() {
     const response = await axios.get('http://localhost:3000/api/posts');
     const allPosts = response.data;
-    this.Posts = allPosts
-        .filter(post => post.Actif === true)
-        .map(post => {
-          return {
-            id: post.id,
-            title: post.title,
-            publishedAt: this.formatDate(post.publishedAt),
-            author: post.author,
-            slug: post.slug
-          };
-        });
-  },
-  methods: {
-    formatDate(dateString : any) {
-      const date = format(parseISO(dateString), 'dd/MM/yyyy');
-      return date;
-    }
+    this.Posts = await Promise.all(allPosts
+      .filter(post => post.Actif === true)
+      .map(async post => {
+        const Date = await formatDate(post.publishedAt);
+        return {
+          id: post.id,
+          title: post.title,
+          publishedAt: Date,
+          author: post.author,
+          slug: post.slug
+        };
+      })
+    );
   },
   data() {
     return {

@@ -1,5 +1,6 @@
-import axios from 'axios';
 import { toastController, alertController } from "@ionic/vue";
+import { parseISO, format } from 'date-fns';
+import axios from 'axios';
 
     export async function ConnecteUserData() {
       const token = localStorage.getItem('token');
@@ -52,4 +53,10 @@ import { toastController, alertController } from "@ionic/vue";
           });
     
           await alert.present();
+    }
+
+    export async function formatDate(dateString : any) 
+    {
+      const date = format(parseISO(dateString), 'dd/MM/yyyy');
+      return date;
     }

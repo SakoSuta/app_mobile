@@ -28,7 +28,7 @@
 
 <script lang="ts">
 import { IonContent, IonPage } from "@ionic/vue";
-import { parseISO, format } from 'date-fns';
+import { formatDate } from "@/function/utils";
 import axios from 'axios';
 
 export default {
@@ -39,8 +39,7 @@ export default {
   async mounted() {
       const response = await axios.get(`http://localhost:3000/api/games/${this.$route.params.slug}`);
       this.Games = response.data;
-      const dateOnly = format(parseISO(response.data.dateSortie), 'dd/MM/yyyy');
-      this.Games.date = dateOnly;
+      this.Games.date = await formatDate(response.data.dateSortie);
   },
   data() {
     return {

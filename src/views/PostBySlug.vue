@@ -9,34 +9,52 @@
         <img src="https://loremflickr.com/320/240" alt="Image du posts" />
       </div>
       <div class="publishAt">
-        <p>Publish at 20/07/2023 by Emilie Montpre</p>
+        <p>Publish at {{ posts.publishedAt }} by {{ posts.author.name }} alias {{ posts.author.pseudo }}</p>
       </div>
       <div class="titlePostBS">
         <h1>
-          Titre hyper mega cool de tous les temps et de tous les univers
-          interstellaire
+          {{ posts.title }}
         </h1>
       </div>
       <div class="ContPostBS">
         <h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at
-          assumenda, quos doloremque cupiditate molestiae eligendi consequuntur
-          repudiandae, ab nihil autem rerum nam similique? Ratione magni
-          voluptatibus explicabo quisquam ipsam! Lorem ipsum dolor sit, amet
-          consectetur adipisicing elit. Nemo pariatur veniam dolor, asperiores,
-          qui rem consectetur amet ipsa ab, quae labore at provident expedita
-          eius et deleniti corporis error unde. Lorem ipsum, dolor sit amet
-          consectetur adipisicing elit. Quas, perferendis! Inventore accusamus
-          magni repudiandae, iure sunt expedita repellat optio, sequi cum culpa,
-          tempore velit asperiores adipisci nesciunt? Dignissimos, possimus in.
+          {{ posts.body }}
         </h3>
       </div>
     </ion-content>
   </ion-page>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 import { IonContent, IonPage } from "@ionic/vue";
+import { formatDate } from "@/function/utils";
+import axios from "axios";
+
+export default {
+  components: {
+    IonContent,
+    IonPage,
+  },
+  async mounted() {
+    const response = await axios.get(`http://localhost:3000/api/posts/${this.$route.params.slug}`);
+    this.posts = response.data;
+    this.posts.publishedAt = await formatDate(response.data.publishedAt);
+  },
+  data() {
+    return {
+      posts: {
+        author: {
+          name: "",
+          pseudo: "",
+        },
+        title: "",
+        image: "",
+        publishedAt: "",
+        body: "",
+      },
+    }
+  }
+};
 </script>
 
 <style>
