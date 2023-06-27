@@ -62,44 +62,44 @@
 
     <div v-if="selectedSegment === 'Categories'" class="SearchContent">
       <ion-searchbar placeholder="Search your Categories"></ion-searchbar>
-      <p class="CountResult">6 results found</p>
+      <p class="CountResult">5 results found</p>
       <div class="AllResult">
         <router-link to="/Category/sluggg">
           <div class="ResultSearchCate">
             <div class="ContResultCate">
-              <h2>FPS gamqzdqdddddddddddddddddddddddz</h2>
-              <img src="Category/tabler_viewfinder.svg" alt="Icone Category">
+              <h2>Simulation</h2>
+              <img src="Category/simulation.svg" alt="Icone Category">
             </div>
           </div>
         </router-link>
         <router-link to="/Category/sluggg">
           <div class="ResultSearchCate">
             <div class="ContResultCate">
-              <h2>FPS game AHH</h2>
-              <img src="Category/cards.svg" alt="Icone Category">
+              <h2>Race and flight</h2>
+              <img src="Category/racetrack.svg" alt="Icone Category">
             </div>
           </div>
         </router-link>
         <router-link to="/Category/sluggg">
           <div class="ResultSearchCate">
             <div class="ContResultCate">
-              <h2>FPS game AHH</h2>
-              <img src="Category/cards.svg" alt="Icone Category">
+              <h2>strategy</h2>
+              <img src="Category/strategy.svg" alt="Icone Category">
             </div>
           </div>
         </router-link>
         <router-link to="/Category/sluggg">
           <div class="ResultSearchCate">
             <div class="ContResultCate">
-              <h2>FPS game AHH</h2>
-              <img src="Category/cards.svg" alt="Icone Category">
+              <h2>Puzzle and mind games</h2>
+              <img src="Category/puzzle.svg" alt="Icone Category">
             </div>
           </div>
         </router-link>
         <router-link to="/Category/sluggg">
           <div class="ResultSearchCate">
             <div class="ContResultCate">
-              <h2>FPS game AHH</h2>
+              <h2>FPS</h2>
               <img src="Category/tabler_viewfinder.svg" alt="Icone Category">
             </div>
           </div>
@@ -109,40 +109,40 @@
 
     <div v-if="selectedSegment === 'Game'" class="SearchContent">
       <ion-searchbar placeholder="Search your Game"></ion-searchbar>
-      <p class="CountResult">6 results found</p>
+      <p class="CountResult">5 results found</p>
       <div class="AllResult">
         <router-link to="/Games/sluggg">
           <div class="ResultSearchGame">
             <div class="ContResultGame">
-              <h2>FPS gamqzdqdddddddddddddddddddddddz</h2>
+              <h2>Forager</h2>
             </div>
           </div>
         </router-link>
         <router-link to="/Games/sluggg">
           <div class="ResultSearchGame">
             <div class="ContResultGame">
-              <h2>FPS game AHH</h2>
+              <h2>Battlefield 2042</h2>
             </div>
           </div>
         </router-link>
         <router-link to="/Games/sluggg">
           <div class="ResultSearchGame">
             <div class="ContResultGame">
-              <h2>FPS game AHH</h2>
+              <h2>Need for Speed™ Rivals: Complete Edition</h2>
             </div>
           </div>
         </router-link>
         <router-link to="/Games/sluggg">
           <div class="ResultSearchGame">
             <div class="ContResultGame">
-              <h2>FPS game AHH</h2>
+              <h2>Superliminal</h2>
             </div>
           </div>
         </router-link>
         <router-link to="/Games/sluggg">
           <div class="ResultSearchGame">
             <div class="ContResultGame">
-              <h2>FPS game AHH</h2>
+              <h2>Totally Accurate Battle Simulator</h2>
             </div>
           </div>
         </router-link>
