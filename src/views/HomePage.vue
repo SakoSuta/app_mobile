@@ -23,10 +23,11 @@
           <div class="degraSubJ"></div>
           <div class="AllCategorySub">
             <ul>
-              <li>Category</li>
-              <li>Category</li>
-              <li>Category</li>
-              <li>Category</li>
+              <li>Access to all game categories</li>
+              <li>Very recents games</li>
+              <li>Games in beta test</li>
+              <li>Video game advantage</li>
+              <li>Very old games</li>
             </ul>
             <span>And other...</span>
           </div>
@@ -55,9 +56,9 @@
           <div class="degraSubS"></div>
           <div class="AllCategorySubS">
             <ul>
-              <li>Category</li>
-              <li>Category</li>
-              <li>Category</li>
+              <li>Access to all game categories</li>
+              <li>Video game advantage</li>
+              <li>Very recents games</li>
             </ul>
             <span>And other...</span>
           </div>
@@ -86,10 +87,9 @@
           <div class="degraSubM"></div>
           <div class="AllCategorySub">
             <ul>
-              <li>Category</li>
-              <li>Category</li>
-              <li>Category</li>
-              <li>Category</li>
+              <li>Access to all game categories</li>
+              <li>Pormotion in the DLC</li>
+              <li>Very recents games</li>
             </ul>
             <span>And other...</span>
           </div>
