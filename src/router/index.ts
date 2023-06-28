@@ -1,20 +1,20 @@
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import App from '../App.vue';
-import HomePage from '../views/HomePage.vue';
-import RegisterPage from '../views/Auth/Register.vue';
-import LoginPage from '../views/Auth/Login.vue';
-import ContactPage from '../views/Contact.vue';
-import PostPage from '../views/Posts.vue';
-import PostBySlugPage from '../views/PostBySlug.vue';
-import CategoryPage from '../views/Category.vue';
-import GamesPage from '../views/Games.vue';
-import UserPage from '../views/User.vue';
-import LegalNPage from '../views/legal/Legal_Notice.vue';
-import TermsServPage from '../views/legal/Terms_Of_Service.vue';
-import TermsSalPage from '../views/legal/Terms_Of_Sales.vue';
-import SubscriptionPage from '../views/Subscriptions.vue';
+import App from '@/App.vue';
+import HomePage from '@/views/HomePage.vue';
+import RegisterPage from '@/views/Auth/Register.vue';
+import LoginPage from '@/views/Auth/Login.vue';
+import ContactPage from '@/views/Contact.vue';
+import PostPage from '@/views/Posts.vue';
+import PostBySlugPage from '@/views/PostBySlug.vue';
+import CategoryPage from '@/views/Category.vue';
+import GamesPage from '@/views/Games.vue';
+import UserPage from '@/views/User.vue';
+import LegalNPage from '@/views/legal/Legal_Notice.vue';
+import TermsServPage from '@/views/legal/Terms_Of_Service.vue';
+import TermsSalPage from '@/views/legal/Terms_Of_Sales.vue';
+import SubscriptionPage from '@/views/Subscriptions.vue';
 
 const router = createRouter({
   history: createWebHistory(),
