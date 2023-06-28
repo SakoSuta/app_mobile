@@ -28,7 +28,7 @@
 <script lang="ts">
 import { IonContent, IonPage } from "@ionic/vue";
 import { ref } from "vue";
-import { presentToast } from "/src/function/utils";
+import { presentToast } from "@/function/utils";
 import axios from "axios";
 
 export default {

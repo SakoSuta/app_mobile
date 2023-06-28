@@ -97,7 +97,7 @@ import {
   IonCardContent,
 } from "@ionic/vue";
 import axios from "axios";
-import { presentToast } from "/src/function/utils";
+import { presentToast } from "@/function/utils";
 
 export default {
   components: {

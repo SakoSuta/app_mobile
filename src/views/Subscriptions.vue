@@ -36,7 +36,7 @@ import {
   IonCardTitle,
 } from "@ionic/vue";
 import { loadStripe } from "@stripe/stripe-js";
-import { ConnecteUserData } from "/src/function/utils";
+import { ConnecteUserData } from "@/function/utils";
 
 export default {
   components: {

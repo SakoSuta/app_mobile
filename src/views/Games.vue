@@ -28,7 +28,7 @@
 
 <script lang="ts">
 import { IonContent, IonPage } from "@ionic/vue";
-import { formatDate } from "/src/function/utils";
+import { formatDate } from "@/function/utils";
 import axios from "axios";
 
 export default {

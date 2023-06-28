@@ -94,7 +94,7 @@
 
 <script lang="ts">
 import { IonContent, IonPage } from "@ionic/vue";
-import { ConnecteUserData, presentLogoutAlert } from "/src/function/utils";
+import { ConnecteUserData, presentLogoutAlert } from "@/function/utils";
 import axios from "axios";
 import { ref } from "vue";
 
