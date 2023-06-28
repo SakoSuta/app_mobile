@@ -24,6 +24,7 @@
           {{ posts.body }}
         </h3>
       </div>
+      <Foot></Foot>
     </ion-content>
   </ion-page>
 </template>

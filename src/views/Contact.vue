@@ -83,6 +83,7 @@
           </ion-card-content>
         </ion-card>
       </div>
+      <Foot></Foot>
     </ion-content>
   </ion-page>
 </template>

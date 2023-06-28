@@ -22,6 +22,7 @@
           </router-link>
         </div>
       </div>
+      <Foot></Foot>
     </ion-content>
   </ion-page>
 </template>

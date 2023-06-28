@@ -22,6 +22,7 @@
       <div class="ContGames">
         <h3>{{ Games.description }}</h3>
       </div>
+      <Foot></Foot>
     </ion-content>
   </ion-page>
 </template>
