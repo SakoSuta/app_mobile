@@ -39,7 +39,7 @@
           <span>Contact Us</span>
         </router-link>
         <router-link to="/" class="ItemMenu" @click="presentLogoutAlert">
-          <img src="//Icone/Logout.svg" alt="Icon" />
+          <img src="/Icone/Logout.svg" alt="Icon" />
           <span>Logout</span>
         </router-link>
       </div>

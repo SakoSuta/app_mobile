@@ -10,7 +10,7 @@
           </ion-card-header>
 
           <ion-card-content>
-            <img src="//Planet/Jupiter.png" alt="" />
+            <img src="/Planet/Jupiter.png" alt="" />
             <div class=""></div>
             <p>32 € / mois</p>
             <stripe-buy-button
