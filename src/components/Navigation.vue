@@ -73,7 +73,7 @@
         <ion-searchbar placeholder="Search your Categories"></ion-searchbar>
         <p class="CountResult">5 results found</p>
         <div class="AllResult">
-          <router-link to="/Category/sluggg">
+          <router-link to="/Category/Simulation">
             <div class="ResultSearchCate">
               <div class="ContResultCate">
                 <h2>Simulation</h2>
@@ -81,7 +81,7 @@
               </div>
             </div>
           </router-link>
-          <router-link to="/Category/sluggg">
+          <router-link to="/Category/Race_And_Flight">
             <div class="ResultSearchCate">
               <div class="ContResultCate">
                 <h2>Race and flight</h2>
@@ -89,7 +89,7 @@
               </div>
             </div>
           </router-link>
-          <router-link to="/Category/sluggg">
+          <router-link to="/Category/Strategy">
             <div class="ResultSearchCate">
               <div class="ContResultCate">
                 <h2>strategy</h2>
@@ -97,7 +97,7 @@
               </div>
             </div>
           </router-link>
-          <router-link to="/Category/sluggg">
+          <router-link to="/Category/Puzzle_and_mind_games">
             <div class="ResultSearchCate">
               <div class="ContResultCate">
                 <h2>Puzzle and mind games</h2>
@@ -105,7 +105,7 @@
               </div>
             </div>
           </router-link>
-          <router-link to="/Category/sluggg">
+          <router-link to="/Category/FPS">
             <div class="ResultSearchCate">
               <div class="ContResultCate">
                 <h2>FPS</h2>
