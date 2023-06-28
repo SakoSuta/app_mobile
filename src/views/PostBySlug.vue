@@ -6,7 +6,7 @@
         <img src="/Icone/Go_Back.svg" alt="Return button" />
       </router-link>
       <div class="ImgPost">
-        <img src="/https://loremflickr.com/320/240" alt="Image du posts" />
+        <img src="https://loremflickr.com/320/240" alt="Image du posts" />
       </div>
       <div class="publishAt">
         <p>

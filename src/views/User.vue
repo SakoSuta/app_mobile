@@ -43,7 +43,7 @@
           <div class="CardUser" v-else>
             <div class="ImageUser">
               <img
-                src="/https://loremflickr.com/320/240"
+                src="https://loremflickr.com/320/240"
                 alt="Profile Photo"
                 class="UserPic"
               />
