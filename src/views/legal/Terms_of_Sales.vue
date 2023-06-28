@@ -3,7 +3,7 @@
     <Nav></Nav>
     <ion-content>
       <div class="Legal">
-        <h1 class="Title">Legal Notice</h1>
+        <h1 class="Title">Terms Of Sales</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
           totam quasi ad aspernatur placeat qui iste possimus, doloribus veniam,
@@ -46,6 +46,7 @@
           ipsum dolor sit amet consectetur
         </p>
       </div>
+      <Foot></Foot>
     </ion-content>
   </ion-page>
 </template>

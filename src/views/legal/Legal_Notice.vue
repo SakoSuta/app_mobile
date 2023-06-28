@@ -46,6 +46,7 @@
           ipsum dolor sit amet consectetur
         </p>
       </div>
+      <Foot></Foot>
     </ion-content>
   </ion-page>
 </template>
