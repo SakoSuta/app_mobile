@@ -3,7 +3,7 @@
     <Nav :background-color="'#24223E'"></Nav>
     <ion-content>
       <div onclick="history.back()" class="Go_BackBS">
-        <img src="Icone/Go_Back.svg" alt="Return button" />
+        <img src="/Icone/Go_Back.svg" alt="Return button" />
       </div>
       <div class="ImgPost">
         <img :src="Games.image" alt="Image du posts" />
@@ -12,15 +12,15 @@
         </div>
       </div>
       <div class="titleGames">
-        <h1>{{Games.name}}</h1>
+        <h1>{{ Games.name }}</h1>
       </div>
       <div class="InfoPlus">
-        <h2>DEVELOPPEMENT : {{Games.developpement}}</h2>
-        <h2>EDITION: {{Games.edition}}</h2>
-        <p>Date OF PUBLICATION : {{Games.date}}</p>
+        <h2>DEVELOPPEMENT : {{ Games.developpement }}</h2>
+        <h2>EDITION: {{ Games.edition }}</h2>
+        <p>Date OF PUBLICATION : {{ Games.date }}</p>
       </div>
       <div class="ContGames">
-        <h3>{{Games.description}}</h3>
+        <h3>{{ Games.description }}</h3>
       </div>
     </ion-content>
   </ion-page>
@@ -29,7 +29,7 @@
 <script lang="ts">
 import { IonContent, IonPage } from "@ionic/vue";
 import { formatDate } from "@/function/utils";
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   components: {
@@ -37,9 +37,11 @@ export default {
     IonPage,
   },
   async mounted() {
-      const response = await axios.get(`http://localhost:3000/api/games/${this.$route.params.slug}`);
-      this.Games = response.data;
-      this.Games.date = await formatDate(response.data.dateSortie);
+    const response = await axios.get(
+      `http://localhost:3000/api/games/${this.$route.params.slug}`
+    );
+    this.Games = response.data;
+    this.Games.date = await formatDate(response.data.dateSortie);
   },
   data() {
     return {
@@ -49,12 +51,11 @@ export default {
         date: "",
         developpement: "",
         edition: "",
-        description:"",
+        description: "",
       },
     };
   },
 };
-
 </script>
 
 <style>

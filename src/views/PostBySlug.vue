@@ -3,13 +3,16 @@
     <Nav :background-color="'#24223E'"></Nav>
     <ion-content>
       <router-link to="/posts" class="Go_BackBS">
-        <img src="Icone/Go_Back.svg" alt="Return button" />
+        <img src="/Icone/Go_Back.svg" alt="Return button" />
       </router-link>
       <div class="ImgPost">
-        <img src="https://loremflickr.com/320/240" alt="Image du posts" />
+        <img src="/https://loremflickr.com/320/240" alt="Image du posts" />
       </div>
       <div class="publishAt">
-        <p>Publish at {{ posts.publishedAt }} by {{ posts.author.name }} alias {{ posts.author.pseudo }}</p>
+        <p>
+          Publish at {{ posts.publishedAt }} by {{ posts.author.name }} alias
+          {{ posts.author.pseudo }}
+        </p>
       </div>
       <div class="titlePostBS">
         <h1>
@@ -36,7 +39,9 @@ export default {
     IonPage,
   },
   async mounted() {
-    const response = await axios.get(`http://localhost:3000/api/posts/${this.$route.params.slug}`);
+    const response = await axios.get(
+      `http://localhost:3000/api/posts/${this.$route.params.slug}`
+    );
     this.posts = response.data;
     this.posts.publishedAt = await formatDate(response.data.publishedAt);
   },
@@ -52,8 +57,8 @@ export default {
         publishedAt: "",
         body: "",
       },
-    }
-  }
+    };
+  },
 };
 </script>
 

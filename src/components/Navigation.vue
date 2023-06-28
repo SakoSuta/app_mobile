@@ -1,9 +1,9 @@
 <template>
   <ion-menu contentId="main-content" class="NavMenu">
     <ion-header class="IntroMenu" v-if="LoginUser">
-      <img :src="UserData.image" alt="Profile Photo" v-if="UserData.image"/>
-      <img src="/image/PPDefault.png" alt="Profile Photo" v-else/>
-      <p>Hi, {{UserData.pseudo}}</p>
+      <img :src="UserData.image" alt="Profile Photo" v-if="UserData.image" />
+      <img src="/image/PPDefault.png" alt="Profile Photo" v-else />
+      <p>Hi, {{ UserData.pseudo }}</p>
     </ion-header>
     <ion-header class="IntroMenu" v-else>
       <router-link to="/login" class="LoginMenu">Login</router-link>
@@ -11,37 +11,46 @@
     <ion-content>
       <div class="ContMenu">
         <router-link to="/" class="ItemMenu">
-          <img src="Icone/Home.svg" alt="Icon" />
+          <img src="/Icone/Home.svg" alt="Icon" />
           <span>Home</span>
         </router-link>
-        <router-link :to="`/users/${UserData.uuid}`" class="ItemMenu" v-if="LoginUser">
-          <img src="Icone/User.svg" alt="Icon" />
+        <router-link
+          :to="`/users/${UserData.uuid}`"
+          class="ItemMenu"
+          v-if="LoginUser"
+        >
+          <img src="/Icone/User.svg" alt="Icon" />
           <span>Account</span>
         </router-link>
         <router-link to="/login" class="ItemMenu" v-else>
-          <img src="Icone/User.svg" alt="Icon" />
+          <img src="/Icone/User.svg" alt="Icon" />
           <span>Account</span>
         </router-link>
         <router-link to="/subscription" class="ItemMenu">
-          <img src="Icone/Subscription.svg" alt="Icon" />
+          <img src="/Icone/Subscription.svg" alt="Icon" />
           <span>Subscriptions</span>
         </router-link>
         <router-link to="/posts" class="ItemMenu">
-          <img src="Icone/News.svg" alt="Icon" />
+          <img src="/Icone/News.svg" alt="Icon" />
           <span>All News</span>
         </router-link>
         <router-link to="/contact" class="ItemMenu">
-          <img src="Icone/Mail.svg" alt="Icon" />
+          <img src="/Icone/Mail.svg" alt="Icon" />
           <span>Contact Us</span>
         </router-link>
         <router-link to="/" class="ItemMenu" @click="presentLogoutAlert">
-          <img src="Icone/Logout.svg" alt="Icon" />
+          <img src="//Icone/Logout.svg" alt="Icon" />
           <span>Logout</span>
         </router-link>
       </div>
     </ion-content>
   </ion-menu>
-  <ion-modal ref="modal" trigger="open-modal" :presenting-element="presentingElement" class="IonModalS">
+  <ion-modal
+    ref="modal"
+    trigger="open-modal"
+    :presenting-element="presentingElement"
+    class="IonModalS"
+  >
     <ion-header>
       <ion-toolbar>
         <ion-title class="TitleModalS">Search</ion-title>
@@ -60,114 +69,141 @@
         </ion-segment-button>
       </ion-segment>
 
-    <div v-if="selectedSegment === 'Categories'" class="SearchContent">
-      <ion-searchbar placeholder="Search your Categories"></ion-searchbar>
-      <p class="CountResult">5 results found</p>
-      <div class="AllResult">
-        <router-link to="/Category/sluggg">
-          <div class="ResultSearchCate">
-            <div class="ContResultCate">
-              <h2>Simulation</h2>
-              <img src="Category/simulation.svg" alt="Icone Category">
+      <div v-if="selectedSegment === 'Categories'" class="SearchContent">
+        <ion-searchbar placeholder="Search your Categories"></ion-searchbar>
+        <p class="CountResult">5 results found</p>
+        <div class="AllResult">
+          <router-link to="/Category/sluggg">
+            <div class="ResultSearchCate">
+              <div class="ContResultCate">
+                <h2>Simulation</h2>
+                <img src="/Category/simulation.svg" alt="Icone Category" />
+              </div>
             </div>
-          </div>
-        </router-link>
-        <router-link to="/Category/sluggg">
-          <div class="ResultSearchCate">
-            <div class="ContResultCate">
-              <h2>Race and flight</h2>
-              <img src="Category/racetrack.svg" alt="Icone Category">
+          </router-link>
+          <router-link to="/Category/sluggg">
+            <div class="ResultSearchCate">
+              <div class="ContResultCate">
+                <h2>Race and flight</h2>
+                <img src="/Category/racetrack.svg" alt="Icone Category" />
+              </div>
             </div>
-          </div>
-        </router-link>
-        <router-link to="/Category/sluggg">
-          <div class="ResultSearchCate">
-            <div class="ContResultCate">
-              <h2>strategy</h2>
-              <img src="Category/strategy.svg" alt="Icone Category">
+          </router-link>
+          <router-link to="/Category/sluggg">
+            <div class="ResultSearchCate">
+              <div class="ContResultCate">
+                <h2>strategy</h2>
+                <img src="/Category/strategy.svg" alt="Icone Category" />
+              </div>
             </div>
-          </div>
-        </router-link>
-        <router-link to="/Category/sluggg">
-          <div class="ResultSearchCate">
-            <div class="ContResultCate">
-              <h2>Puzzle and mind games</h2>
-              <img src="Category/puzzle.svg" alt="Icone Category">
+          </router-link>
+          <router-link to="/Category/sluggg">
+            <div class="ResultSearchCate">
+              <div class="ContResultCate">
+                <h2>Puzzle and mind games</h2>
+                <img src="/Category/puzzle.svg" alt="Icone Category" />
+              </div>
             </div>
-          </div>
-        </router-link>
-        <router-link to="/Category/sluggg">
-          <div class="ResultSearchCate">
-            <div class="ContResultCate">
-              <h2>FPS</h2>
-              <img src="Category/tabler_viewfinder.svg" alt="Icone Category">
+          </router-link>
+          <router-link to="/Category/sluggg">
+            <div class="ResultSearchCate">
+              <div class="ContResultCate">
+                <h2>FPS</h2>
+                <img
+                  src="/Category/tabler_viewfinder.svg"
+                  alt="Icone Category"
+                />
+              </div>
             </div>
-          </div>
-        </router-link>
+          </router-link>
+        </div>
       </div>
-    </div>
 
-    <div v-if="selectedSegment === 'Game'" class="SearchContent">
-      <ion-searchbar placeholder="Search your Game"></ion-searchbar>
-      <p class="CountResult">5 results found</p>
-      <div class="AllResult">
-        <router-link to="/Games/sluggg">
-          <div class="ResultSearchGame">
-            <div class="ContResultGame">
-              <h2>Forager</h2>
+      <div v-if="selectedSegment === 'Game'" class="SearchContent">
+        <ion-searchbar placeholder="Search your Game"></ion-searchbar>
+        <p class="CountResult">5 results found</p>
+        <div class="AllResult">
+          <router-link to="/Games/sluggg">
+            <div class="ResultSearchGame">
+              <div class="ContResultGame">
+                <h2>Forager</h2>
+              </div>
             </div>
-          </div>
-        </router-link>
-        <router-link to="/Games/sluggg">
-          <div class="ResultSearchGame">
-            <div class="ContResultGame">
-              <h2>Battlefield 2042</h2>
+          </router-link>
+          <router-link to="/Games/sluggg">
+            <div class="ResultSearchGame">
+              <div class="ContResultGame">
+                <h2>Battlefield 2042</h2>
+              </div>
             </div>
-          </div>
-        </router-link>
-        <router-link to="/Games/sluggg">
-          <div class="ResultSearchGame">
-            <div class="ContResultGame">
-              <h2>Need for Speed™ Rivals: Complete Edition</h2>
+          </router-link>
+          <router-link to="/Games/sluggg">
+            <div class="ResultSearchGame">
+              <div class="ContResultGame">
+                <h2>Need for Speed™ Rivals: Complete Edition</h2>
+              </div>
             </div>
-          </div>
-        </router-link>
-        <router-link to="/Games/sluggg">
-          <div class="ResultSearchGame">
-            <div class="ContResultGame">
-              <h2>Superliminal</h2>
+          </router-link>
+          <router-link to="/Games/sluggg">
+            <div class="ResultSearchGame">
+              <div class="ContResultGame">
+                <h2>Superliminal</h2>
+              </div>
             </div>
-          </div>
-        </router-link>
-        <router-link to="/Games/sluggg">
-          <div class="ResultSearchGame">
-            <div class="ContResultGame">
-              <h2>Totally Accurate Battle Simulator</h2>
+          </router-link>
+          <router-link to="/Games/sluggg">
+            <div class="ResultSearchGame">
+              <div class="ContResultGame">
+                <h2>Totally Accurate Battle Simulator</h2>
+              </div>
             </div>
-          </div>
-        </router-link>
+          </router-link>
+        </div>
       </div>
-    </div>
-
     </ion-content>
   </ion-modal>
   <ion-header>
     <div class="Navigate" :style="navStyles" id="main-content">
       <ion-buttons slot="start">
         <ion-menu-button>
-          <img src="Icone/Menu.svg" alt="Menu" />
+          <img src="/Icone/Menu.svg" alt="Menu" />
         </ion-menu-button>
       </ion-buttons>
       <router-link to="/">
         <img :src="logo" alt="Logo" />
       </router-link>
-      <ion-buttons id="open-modal"><img src="Icone\search.svg" alt="Search" /></ion-buttons>
+      <ion-buttons id="open-modal"
+        ><img src="/Icone\search.svg" alt="Search"
+      /></ion-buttons>
     </div>
   </ion-header>
 </template>
 
 <script lang="ts">
-  import {
+import {
+  IonButtons,
+  IonButton,
+  IonModal,
+  IonHeader,
+  IonContent,
+  IonToolbar,
+  IonTitle,
+  IonItem,
+  IonList,
+  IonAvatar,
+  IonImg,
+  IonLabel,
+  IonPage,
+  IonMenu,
+  IonMenuButton,
+  IonSegment,
+  IonSegmentButton,
+} from "@ionic/vue";
+import { defineComponent } from "vue";
+import { ConnecteUserData, presentLogoutAlert } from "@/function/utils";
+
+export default defineComponent({
+  components: {
     IonButtons,
     IonButton,
     IonModal,
@@ -185,86 +221,62 @@
     IonMenuButton,
     IonSegment,
     IonSegmentButton,
-  } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-  import { ConnecteUserData, presentLogoutAlert } from "@/function/utils";
-
-  export default defineComponent({
-    components: {
-      IonButtons,
-      IonButton,
-      IonModal,
-      IonHeader,
-      IonContent,
-      IonToolbar,
-      IonTitle,
-      IonItem,
-      IonList,
-      IonAvatar,
-      IonImg,
-      IonLabel,
-      IonPage,
-      IonMenu,
-      IonMenuButton,
-      IonSegment,
-      IonSegmentButton,
+  },
+  data() {
+    return {
+      presentingElement: null,
+      selectedSegment: "Categories",
+      UserData: {
+        uuid: "",
+        pseudo: "",
+        image: "",
+      },
+    };
+  },
+  props: {
+    logoPath: {
+      type: String,
+      default: "Logo/long_item.svg",
     },
-    data() {
+    backgroundColor: {
+      type: String,
+      default: "#242252",
+    },
+  },
+  computed: {
+    logo() {
+      return this.logoPath || "Logo/long_item.svg";
+    },
+    navStyles() {
       return {
-        presentingElement: null,
-        selectedSegment: 'Categories',
-        UserData: {
-          uuid: '',
-          pseudo: '',
-          image: '',
-        },
+        backgroundColor: this.backgroundColor || "#242252",
       };
     },
-    props: {
-      logoPath: {
-        type: String,
-        default: "Logo/long_item.svg",
-      },
-      backgroundColor: {
-        type: String,
-        default: "#242252",
-      },
+    LoginUser() {
+      return !!localStorage.getItem("token");
     },
-    computed: {
-      logo() {
-        return this.logoPath || "Logo/long_item.svg";
-      },
-      navStyles() {
-        return {
-          backgroundColor: this.backgroundColor || "#242252",
-        };
-      },
-      LoginUser() {
-        return !!localStorage.getItem("token");
-      },
+  },
+  methods: {
+    dismiss() {
+      this.$refs.modal.$el.dismiss();
     },
-    methods: {
-      dismiss() {
-        this.$refs.modal.$el.dismiss();
-      }, 
-      async presentLogoutAlert() {
-        await presentLogoutAlert();
-      },
-      // reloadContent() {
-      // // Mettez à jour vos données ou effectuez d'autres actions pour recharger le contenu
-      //   console.log("Contenu rechargé avec succès !");
-      // },
+    async presentLogoutAlert() {
+      await presentLogoutAlert();
     },
-    async mounted() {
-      const userData = await ConnecteUserData();
-      if (userData){
-        this.UserData = userData;
-      }
-      else {
-        this.LoginUser = false;
-      }
-    },
-  });
+    // reloadContent() {
+    // // Mettez à jour vos données ou effectuez d'autres actions pour recharger le contenu
+    //   console.log("Contenu rechargé avec succès !");
+    // },
+  },
+  async mounted() {
+    const userData = await ConnecteUserData();
+    if (userData) {
+      this.UserData = userData;
+    } else {
+      this.LoginUser = false;
+    }
+  },
+});
 </script>
 
 <style>
@@ -327,33 +339,33 @@ ion-menu.NavMenu::part(container) {
   font-size: 18px;
   padding: 0px 10%;
 }
-.LoginMenu{
+.LoginMenu {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 80%;
   height: 40px;
   border-radius: 20px;
-  background-color: #9987FF;
+  background-color: #9987ff;
   text-decoration: none;
   color: #ffffff;
   font-family: var(--font-gugi);
   font-size: 18px;
 }
 
-.IonModalS ion-toolbar{
+.IonModalS ion-toolbar {
   --background: #242252;
 }
-.IonModalS ion-content{
+.IonModalS ion-content {
   --background: #242252;
 }
-.TitleModalS{
+.TitleModalS {
   font-family: var(--font-gugi);
   font-size: 18px;
-  color: #9987FF;
+  color: #9987ff;
 }
-.CloseModalS{
-  --color: #9987FF;
+.CloseModalS {
+  --color: #9987ff;
 }
 .ContModalS ion-segment {
   margin: 15px 0px;
@@ -361,36 +373,41 @@ ion-menu.NavMenu::part(container) {
 .ContModalS ion-segment-button {
   font-family: var(--font-gugi);
   --color-checked: #fff;
-  --indicator-color: #6459A2;
+  --indicator-color: #6459a2;
 }
-.SearchContent ion-searchbar{
+.SearchContent ion-searchbar {
   font-family: var(--font-gugi);
   font-size: 10px;
   --color: #fff;
 }
-.CountResult{
+.CountResult {
   font-family: var(--font-gugi);
   font-size: 16px;
 }
-.AllResult{
+.AllResult {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 @media (min-width: 568px) {
-  .AllResult{
+  .AllResult {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 }
-.ResultSearchGame{
+.ResultSearchGame {
   width: 140px;
   height: 150px;
-  background-image: url('https://loremflickr.com/320/240');
+  background-image: url("https://loremflickr.com/320/240");
   border-radius: 20px;
   margin: 13px;
 }
-.ContResultGame{
-  background: linear-gradient(180deg, rgba(36, 33, 49, 0.5) 0%, rgba(36, 33, 49, 0.5) 49.42%, #242131 70.55%);  
+.ContResultGame {
+  background: linear-gradient(
+    180deg,
+    rgba(36, 33, 49, 0.5) 0%,
+    rgba(36, 33, 49, 0.5) 49.42%,
+    #242131 70.55%
+  );
   height: 100%;
   border-radius: 20px;
   display: flex;
@@ -398,22 +415,22 @@ ion-menu.NavMenu::part(container) {
   align-items: end;
   padding: 0px 20px;
 }
-.ContResultGame h2{
+.ContResultGame h2 {
   font-family: var(--font-gugi);
   font-size: 12px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   width: 100%;
 }
 
-.ResultSearchCate{
+.ResultSearchCate {
   width: 140px;
   height: 150px;
-  background-color: #2F2B45;
+  background-color: #2f2b45;
   border-radius: 20px;
   margin: 13px;
 }
-.ContResultCate{
+.ContResultCate {
   height: 100%;
   border-radius: 20px;
   display: flex;
@@ -421,17 +438,17 @@ ion-menu.NavMenu::part(container) {
   align-items: center;
   padding: 0px 20px;
 }
-.ContResultCate img{
+.ContResultCate img {
   position: relative;
 }
 .ContResultCate {
   overflow: hidden;
 }
-.ContResultCate h2{
+.ContResultCate h2 {
   font-family: var(--font-gugi);
   font-size: 12px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   width: 100%;
 }
 </style>

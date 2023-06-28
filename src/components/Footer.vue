@@ -2,7 +2,7 @@
     <footer>
       <div class="Footer">
         <div class="ImgFoot">
-            <img src="Logo/long_item.svg" alt="Logo" />
+            <img src="/Logo/long_item.svg" alt="Logo" />
         </div>
         <div class="FootContent">
             <h2>Contact us</h2>

@@ -6,10 +6,10 @@
       <div class="WelcomeSec">
         <h1 class="Title">Discover all available subscriptions</h1>
         <div class="AllPlanet">
-          <img src="Planet/Planet.png" alt="All Planet" class="Planet" />
+          <img src="/Planet/Planet.png" alt="All Planet" class="Planet" />
         </div>
         <div class="Go_Down">
-          <img src="Icone/Double_down_arrow.svg" alt="Go Down" />
+          <img src="/Icone/Double_down_arrow.svg" alt="Go Down" />
         </div>
       </div>
 
@@ -19,7 +19,7 @@
           <p>Lorem ipsum dolor sit amet consectetur.</p>
         </div>
         <div class="Jupiter">
-          <img src="Planet/Jupiter.png" alt="Jupiter" />
+          <img src="/Planet/Jupiter.png" alt="Jupiter" />
           <div class="degraSubJ"></div>
           <div class="AllCategorySub">
             <ul>
@@ -52,7 +52,7 @@
           <p>Lorem ipsum dolor sit amet consectetur.</p>
         </div>
         <div class="Saturn">
-          <img src="Planet/Saturn.png" alt="Saturn" />
+          <img src="/Planet/Saturn.png" alt="Saturn" />
           <div class="degraSubS"></div>
           <div class="AllCategorySubS">
             <ul>
@@ -76,14 +76,14 @@
           </h3>
         </div>
       </div>
-      
+
       <div class="MarsSec">
         <div class="MiniDetails">
           <h1 class="SubTitle">Mars</h1>
           <p>Lorem ipsum dolor sit amet consectetur.</p>
         </div>
         <div class="Mars">
-          <img src="Planet/Mars.png" alt="Mars" />
+          <img src="/Planet/Mars.png" alt="Mars" />
           <div class="degraSubM"></div>
           <div class="AllCategorySub">
             <ul>

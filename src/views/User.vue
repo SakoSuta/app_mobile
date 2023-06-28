@@ -3,14 +3,24 @@
     <!-- <Nav :background-color="'#242131'"></Nav> -->
     <ion-content>
       <div onclick="history.back()" class="Go_Back">
-        <img src="Icone/Go_Back.svg" alt="Return button" />
+        <img src="/Icone/Go_Back.svg" alt="Return button" />
       </div>
       <div class="AllContUser">
         <h1 class="titleUser">Hi, {{ UserData.name }}</h1>
-        <div style="width: 100%;">
+        <div style="width: 100%">
           <div class="CardUser" v-if="EditON">
-            <img :src="UserData.image" alt="Profile Photo" class="UserPic" v-if="UserData.image"/>
-            <img src="/image/PPDefault.png" alt="Profile Photo" class="UserPic" v-else/>
+            <img
+              :src="UserData.image"
+              alt="Profile Photo"
+              class="UserPic"
+              v-if="UserData.image"
+            />
+            <img
+              src="//image/PPDefault.png"
+              alt="Profile Photo"
+              class="UserPic"
+              v-else
+            />
             <div class="UserInfo">
               <div class="UserName">
                 <h2>{{ UserData.pseudo }}</h2>
@@ -18,31 +28,65 @@
               </div>
               <div class="OtherInfo">
                 <h2>{{ UserData.email }}</h2>
-                <h2 v-if="UserData.subscriptions.length > 0">Subscriptions : {{ UserData.subscriptions[0].plan[0].name }}</h2>
+                <h2 v-if="UserData.subscriptions.length > 0">
+                  Subscriptions : {{ UserData.subscriptions[0].plan[0].name }}
+                </h2>
                 <h2 v-else>Subscriptions : none</h2>
               </div>
               <div class="ContEdit">
-                <button @click="EditON = !EditON" class="EditButton">Edit</button>
+                <button @click="EditON = !EditON" class="EditButton">
+                  Edit
+                </button>
               </div>
             </div>
           </div>
           <div class="CardUser" v-else>
             <div class="ImageUser">
-              <img src="https://loremflickr.com/320/240" alt="Profile Photo" class="UserPic"/>
-              <router-link to="/Login" class="EditPict"><img src="Icone/Edit.svg" alt="Edit icone"></router-link>
+              <img
+                src="/https://loremflickr.com/320/240"
+                alt="Profile Photo"
+                class="UserPic"
+              />
+              <router-link to="/Login" class="EditPict"
+                ><img src="/Icone/Edit.svg" alt="Edit icone"
+              /></router-link>
             </div>
             <form action="" class="EditForm">
-              <input type="text" placeholder="Name" :value="UserData.name" ref="name">
-              <input type="text" placeholder="Pseudo" :value="UserData.pseudo" ref="pseudo">
-              <input type="email" placeholder="Email" :value="UserData.email" ref="email">
+              <input
+                type="text"
+                placeholder="Name"
+                :value="UserData.name"
+                ref="name"
+              />
+              <input
+                type="text"
+                placeholder="Pseudo"
+                :value="UserData.pseudo"
+                ref="pseudo"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                :value="UserData.email"
+                ref="email"
+              />
               <div class="ContEditF">
-                <button @click="EditON = !EditON" class="CancelButton">Cancel</button>
-                <button type="submit" class="EditButton" @click="EditUser">Edit</button>
+                <button @click="EditON = !EditON" class="CancelButton">
+                  Cancel
+                </button>
+                <button type="submit" class="EditButton" @click="EditUser">
+                  Edit
+                </button>
               </div>
             </form>
           </div>
         </div>
-        <router-link to="/Login" class="LogoutButton" @click="presentLogoutAlert">Logout</router-link>
+        <router-link
+          to="/Login"
+          class="LogoutButton"
+          @click="presentLogoutAlert"
+          >Logout</router-link
+        >
       </div>
     </ion-content>
   </ion-page>
@@ -52,7 +96,7 @@
 import { IonContent, IonPage } from "@ionic/vue";
 import { ConnecteUserData, presentLogoutAlert } from "@/function/utils";
 import axios from "axios";
-import { ref } from 'vue';
+import { ref } from "vue";
 
 export default {
   components: {
@@ -67,7 +111,6 @@ export default {
       event.preventDefault();
 
       try {
-        
         const nameValue = this.$refs.name.value;
         const pseudoValue = this.$refs.pseudo.value;
         const emailValue = this.$refs.email.value;
@@ -209,10 +252,10 @@ export default {
   border-radius: 9px;
 }
 
-.ImageUser{
+.ImageUser {
   display: flex;
 }
-.EditPict{
+.EditPict {
   position: relative;
   bottom: 30px;
   right: 62px;
@@ -224,14 +267,14 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.EditForm{
+.EditForm {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-.EditForm input{
-  background-color: #2F2C51;
+.EditForm input {
+  background-color: #2f2c51;
   width: 100%;
   height: 40px;
   border-radius: 9px;
@@ -249,13 +292,13 @@ export default {
 .EditForm input:focus {
   outline: none;
 }
-.ContEditF{
+.ContEditF {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px; 
+  margin-top: 20px;
   width: 100%;
 }
-.CancelButton{
+.CancelButton {
   width: min-content;
   padding: 6px 16px;
   font-family: var(--font-gugi);
@@ -263,7 +306,7 @@ export default {
   text-align: center;
   text-decoration: none;
   background-color: #242252;
-  color: #5E54A8;
+  color: #5e54a8;
   border-radius: 9px;
 }
 </style>

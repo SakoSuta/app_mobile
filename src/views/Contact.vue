@@ -4,14 +4,24 @@
     <ion-content>
       <div class="contactUs">
         <div class="Go_Back" onclick="history.back()">
-          <img src="Icone/Go_Back.svg" alt="Return button" />
+          <img src="/Icone/Go_Back.svg" alt="Return button" />
         </div>
         <div class="ContentCont">
           <div class="ContCont">
             <h1 class="titleCont">Contact us</h1>
             <form class="formCont" @submit="ContactPlanet">
-              <input type="text" placeholder="Name" class="inputCont" ref="name" />
-              <input type="email" placeholder="Email" class="inputCont" ref="email" />
+              <input
+                type="text"
+                placeholder="Name"
+                class="inputCont"
+                ref="name"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                class="inputCont"
+                ref="email"
+              />
               <textarea
                 cols="30"
                 rows="10"
@@ -29,7 +39,7 @@
         <ion-card class="CardCont">
           <ion-card-header>
             <div class="ContIconCont">
-              <img src="/Icone/MailW.svg" alt="Icone">
+              <img src="/Icone/MailW.svg" alt="Icone" />
             </div>
           </ion-card-header>
 
@@ -41,7 +51,7 @@
         <ion-card class="CardCont">
           <ion-card-header>
             <div class="ContIconCont">
-              <img src="/Icone/Phone.svg" alt="Icone">
+              <img src="/Icone/Phone.svg" alt="Icone" />
             </div>
           </ion-card-header>
 
@@ -53,7 +63,7 @@
         <ion-card class="CardCont">
           <ion-card-header>
             <div class="ContIconCont">
-              <img src="/Icone/Maps.svg" alt="Icone">
+              <img src="/Icone/Maps.svg" alt="Icone" />
             </div>
           </ion-card-header>
 
@@ -78,8 +88,15 @@
 </template>
 
 <script lang="ts">
-import { IonContent, IonPage, IonCard, IonCardHeader, IonIcon, IonCardContent } from "@ionic/vue";
-import axios from 'axios';
+import {
+  IonContent,
+  IonPage,
+  IonCard,
+  IonCardHeader,
+  IonIcon,
+  IonCardContent,
+} from "@ionic/vue";
+import axios from "axios";
 import { presentToast } from "@/function/utils";
 
 export default {
@@ -100,12 +117,12 @@ export default {
         const message = this.$refs.message.value;
         const subject = "Contact from the website";
 
-        if(!name || !email || !message) {
-          presentToast('Please fill in all fields.');
+        if (!name || !email || !message) {
+          presentToast("Please fill in all fields.");
           return;
         }
 
-        const response = await axios.post('http://localhost:3000/api/contact', {
+        const response = await axios.post("http://localhost:3000/api/contact", {
           name,
           email,
           message,
@@ -114,10 +131,10 @@ export default {
 
         if (response.status === 200) {
           // Envoi réussi
-          presentToast('E-mail sent successfully.');
+          presentToast("E-mail sent successfully.");
         }
       } catch (error) {
-        presentToast('Hmmm... Something went wrong, please try again later.');
+        presentToast("Hmmm... Something went wrong, please try again later.");
       }
     },
   },

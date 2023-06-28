@@ -3,14 +3,21 @@
     <NavAuth></NavAuth>
     <ion-content :fullscreen="true">
       <div class="Go_Back" onclick="history.back()">
-        <img src="Icone/Go_Back.svg" alt="Return button" />
+        <img src="/Icone/Go_Back.svg" alt="Return button" />
       </div>
       <div class="FormuLogin">
         <form class="formL">
           <h1 class="titleL">Login</h1>
           <input type="email" placeholder="Email" class="inputL" ref="email" />
-          <input type="password" placeholder="Password" class="inputL" ref="password" />
-          <router-link to="/register" class="aL">Not registered yet?</router-link>
+          <input
+            type="password"
+            placeholder="Password"
+            class="inputL"
+            ref="password"
+          />
+          <router-link to="/register" class="aL"
+            >Not registered yet?</router-link
+          >
           <button @click.prevent="LoginSubmit" class="buttonL">Connect</button>
         </form>
       </div>
@@ -20,9 +27,9 @@
 
 <script lang="ts">
 import { IonContent, IonPage } from "@ionic/vue";
-import { ref } from 'vue';
+import { ref } from "vue";
 import { presentToast } from "@/function/utils";
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   methods: {
@@ -31,36 +38,38 @@ export default {
         const email = this.$refs.email.value;
         const password = this.$refs.password.value;
 
-        const response = await axios.post('http://localhost:3000/api/auth/login', {
-          email,
-          password,
-        });
+        const response = await axios.post(
+          "http://localhost:3000/api/auth/login",
+          {
+            email,
+            password,
+          }
+        );
 
         if (response.status === 200) {
           // Connexion réussie
           const responseData = response.data;
           const token = responseData.token;
           localStorage.setItem("token", token);
-          this.$router.push('/home');
+          this.$router.push("/home");
         }
-        
       } catch (error) {
         const email = this.$refs.email.value;
         const password = this.$refs.password.value;
-        if(!email || !password) {
-          presentToast('Please fill in all fields.');
+        if (!email || !password) {
+          presentToast("Please fill in all fields.");
           return;
         }
-          if (error.response && error.response.status === 401){
-            // Connexion échouée
-            presentToast('Password or email incorrect');
-          }
+        if (error.response && error.response.status === 401) {
+          // Connexion échouée
+          presentToast("Password or email incorrect");
+        }
       }
     },
   },
   mounted() {
     if (localStorage.getItem("token")) {
-      this.$router.push('/home');
+      this.$router.push("/home");
     }
   },
 };
