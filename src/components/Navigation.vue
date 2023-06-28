@@ -200,7 +200,7 @@ import {
   IonSegmentButton,
 } from "@ionic/vue";
 import { defineComponent } from "vue";
-import { ConnecteUserData, presentLogoutAlert } from '@/function/utils.ts';
+import { ConnecteUserData, presentLogoutAlert } from '../function/utils';
 
 export default defineComponent({
   components: {
