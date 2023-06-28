@@ -9,11 +9,13 @@
             <ion-card class="CardPost">
               <div class="ContCardPost">
                 <ion-card-header>
-                  <h2>{{Post.title}}</h2>
+                  <h2>{{ Post.title }}</h2>
                 </ion-card-header>
                 <ion-card-content>
-                  <p>Publish at {{Post.publishedAt}}</p>
-                  <p>By {{Post.author.pseudo}} alias {{ Post.author.name }}</p>
+                  <p>Publish at {{ Post.publishedAt }}</p>
+                  <p>
+                    By {{ Post.author.pseudo }} alias {{ Post.author.name }}
+                  </p>
                 </ion-card-content>
               </div>
             </ion-card>
@@ -25,9 +27,15 @@
 </template>
 
 <script lang="ts">
-import { IonContent, IonPage, IonCard, IonCardHeader, IonCardContent} from '@ionic/vue';
-import { formatDate } from "@/function/utils";
-import axios from 'axios';
+import {
+  IonContent,
+  IonPage,
+  IonCard,
+  IonCardHeader,
+  IonCardContent,
+} from "@ionic/vue";
+import { formatDate } from "/src/function/utils";
+import axios from "axios";
 
 export default {
   components: {
@@ -35,23 +43,24 @@ export default {
     IonPage,
     IonCard,
     IonCardHeader,
-    IonCardContent
+    IonCardContent,
   },
   async mounted() {
-    const response = await axios.get('http://localhost:3000/api/posts');
+    const response = await axios.get("http://localhost:3000/api/posts");
     const allPosts = response.data;
-    this.Posts = await Promise.all(allPosts
-      .filter(post => post.Actif === true)
-      .map(async post => {
-        const Date = await formatDate(post.publishedAt);
-        return {
-          id: post.id,
-          title: post.title,
-          publishedAt: Date,
-          author: post.author,
-          slug: post.slug
-        };
-      })
+    this.Posts = await Promise.all(
+      allPosts
+        .filter((post) => post.Actif === true)
+        .map(async (post) => {
+          const Date = await formatDate(post.publishedAt);
+          return {
+            id: post.id,
+            title: post.title,
+            publishedAt: Date,
+            author: post.author,
+            slug: post.slug,
+          };
+        })
     );
   },
   data() {
@@ -63,49 +72,49 @@ export default {
 </script>
 
 <style>
-.AllContPost{
+.AllContPost {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.titlePost{
+.titlePost {
   font-family: var(--font-gugi);
   font-size: 28px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 30px 0px;
 }
-.AllCardPosts{
+.AllCardPosts {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 90%;
 }
-.CardPost{
+.CardPost {
   border-radius: 9px;
-  background-image: url('https://loremflickr.com/320/240');
+  background-image: url("https://loremflickr.com/320/240");
   background-size: cover;
 }
-.CardPost ion-card-header{
+.CardPost ion-card-header {
   font-family: var(--font-gugi);
   padding: 0px;
 }
-.CardPost ion-card-content{
+.CardPost ion-card-content {
   font-family: var(--font-gugi);
   padding: 0px;
 }
-.ContCardPost{
+.ContCardPost {
   background-color: rgba(153, 135, 255, 0.5);
   padding: 20px;
 }
-.CardPost ion-card-header h2{
+.CardPost ion-card-header h2 {
   text-align: center;
   font-size: 20px;
   margin: 5px 0px;
   color: #fff;
 }
-.CardPost ion-card-content p{
+.CardPost ion-card-content p {
   text-align: left;
   font-size: 11px;
   margin: 2px 0px;
