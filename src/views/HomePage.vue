@@ -29,38 +29,6 @@
               <li>Video game advantage</li>
               <li>Very old games</li>
             </ul>
-            <span>And other...</span>
-          </div>
-        </div>
-        <div class="ContSub">
-          <h3>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates
-            odio possimus laborum quam distinctio deleniti dolore ipsa?
-            Aspernatur, maxime veniam sunt iste asperiores vitae dolor modi
-            accusamus ea dolores temporibus. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Doloribus nulla nisi autem mollitia,
-            porro neque reiciendis esse magnam non, hic eveniet sit tempora, ab
-            ducimus soluta eligendi laboriosam quae debitis. Lorem ipsum dolor
-            sit amet
-          </h3>
-        </div>
-      </div>
-
-      <div class="SaturnSec">
-        <div class="MiniDetails">
-          <h1 class="SubTitle">Saturn</h1>
-          <p>Lorem ipsum dolor sit amet consectetur.</p>
-        </div>
-        <div class="Saturn">
-          <img src="/Planet/Saturn.png" alt="Saturn" />
-          <div class="degraSubS"></div>
-          <div class="AllCategorySubS">
-            <ul>
-              <li>Access to all game categories</li>
-              <li>Video game advantage</li>
-              <li>Very recents games</li>
-            </ul>
-            <span>And other...</span>
           </div>
         </div>
         <div class="ContSub">
@@ -91,7 +59,36 @@
               <li>Pormotion in the DLC</li>
               <li>Very recents games</li>
             </ul>
-            <span>And other...</span>
+          </div>
+        </div>
+        <div class="ContSub">
+          <h3>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates
+            odio possimus laborum quam distinctio deleniti dolore ipsa?
+            Aspernatur, maxime veniam sunt iste asperiores vitae dolor modi
+            accusamus ea dolores temporibus. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Doloribus nulla nisi autem mollitia,
+            porro neque reiciendis esse magnam non, hic eveniet sit tempora, ab
+            ducimus soluta eligendi laboriosam quae debitis. Lorem ipsum dolor
+            sit amet
+          </h3>
+        </div>
+      </div>
+      
+      <div class="SaturnSec">
+        <div class="MiniDetails">
+          <h1 class="SubTitle">Saturn</h1>
+          <p>Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+        <div class="Saturn">
+          <img src="/Planet/Saturn.png" alt="Saturn" />
+          <div class="degraSubS"></div>
+          <div class="AllCategorySubS">
+            <ul>
+              <li>Access to all game categories</li>
+              <li>Video game advantage</li>
+              <li>Very recents games</li>
+            </ul>
           </div>
         </div>
         <div class="ContSub">
@@ -229,7 +226,6 @@ import { IonContent, IonPage } from "@ionic/vue";
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
   height: 40%;
 }
 .Jupiter img {
@@ -254,7 +250,7 @@ import { IonContent, IonPage } from "@ionic/vue";
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  width: 40%;
+  width: 100%;
 }
 .AllCategorySub ul {
   font-family: var(--font-gugi);
@@ -266,15 +262,7 @@ import { IonContent, IonPage } from "@ionic/vue";
   align-items: center;
   padding: 0px 20px;
   height: 100%;
-}
-.AllCategorySub span {
-  font-family: var(--font-gugi);
-  color: #61579e;
-  font-size: 14px;
   width: 100%;
-  text-align: end;
-  margin: 10px 0px;
-  margin-top: 30px;
 }
 .ContSub h3 {
   font-family: var(--font-gugi);
@@ -344,13 +332,6 @@ import { IonContent, IonPage } from "@ionic/vue";
   justify-content: space-between;
   padding: 0px;
   width: 100%;
-}
-.AllCategorySubS span {
-  font-family: var(--font-gugi);
-  color: #61579e;
-  font-size: 14px;
-  width: 100%;
-  text-align: end;
 }
 .degraSubS {
   width: 590px;
