@@ -12,8 +12,8 @@ import CategoryPage from '@/views/Category.vue';
 import GamesPage from '@/views/Games.vue';
 import UserPage from '@/views/User.vue';
 import LegalNPage from '@/views/legal/Legal_Notice.vue';
-import TermsServPage from '@/views/legal/Terms_Of_Service.vue';
-import TermsSalPage from '@/views/legal/Terms_Of_Sales.vue';
+import TermsServPage from '@/views/legal/Terms_of_Service.vue';
+import TermsSalPage from '@/views/legal/Terms_of_Sales.vue';
 import SubscriptionPage from '@/views/Subscriptions.vue';
 
 const router = createRouter({
