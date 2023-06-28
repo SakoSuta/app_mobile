@@ -16,7 +16,7 @@
               v-if="UserData.image"
             />
             <img
-              src="//image/PPDefault.png"
+              src="/image/PPDefault.png"
               alt="Profile Photo"
               class="UserPic"
               v-else
@@ -88,6 +88,7 @@
           >Logout</router-link
         >
       </div>
+      <Foot></Foot>
     </ion-content>
   </ion-page>
 </template>
